@@ -30,25 +30,25 @@ We compare two rules on the same six teams:
 
 ### Variables
 
-- $i \in \lbrace A, B, C, D, E, F \rbrace$: a project team (player)
-- $v_i$: true project value, **private** (baseline: 3, 6, or 9)
-- $r_i$: reported value, the team's action (a strategy maps $v_i \mapsto r_i$)
-- $d_i$: GPU-hours requested, **public**
-- $e_i = 0.24\,d_i$: estimated emissions in kg CO₂e, **public**
-- $\lambda = 0.5$: carbon penalty per kg CO₂e
-- $s_i = r_i - \lambda e_i = r_i - 0.12\,d_i$: selection score
-- $K = 100$: shared GPU-hours
-- $S$: a group of teams, feasible if $\sum_{i \in S} d_i \le K$
-- $S^*$: the feasible group with the largest $\sum_{i \in S} s_i$ (all $2^6 = 64$ groups are checked)
-- $W^*_{-i}$: the best total score the other teams could reach if $i$ were absent
-- $p_i = W^*_{-i} - \sum_{j \in S^* \setminus \lbrace i \rbrace} s_j$: VCG payment in score units (×10 = priority credits)
-- $u_i = v_i - \lambda e_i - p_i$ if $i \in S^*$, otherwise $u_i = 0$: payoff
+- $`i \in \lbrace A, B, C, D, E, F \rbrace`$: a project team (player)
+- $`v_i`$: true project value, **private** (baseline: 3, 6, or 9)
+- $`r_i`$: reported value, the team's action (a strategy maps $`v_i \mapsto r_i`$)
+- $`d_i`$: GPU-hours requested, **public**
+- $`e_i = 0.24\,d_i`$: estimated emissions in kg CO₂e, **public**
+- $`\lambda = 0.5`$: carbon penalty per kg CO₂e
+- $`s_i = r_i - \lambda e_i = r_i - 0.12\,d_i`$: selection score
+- $`K = 100`$: shared GPU-hours
+- $`S`$: a group of teams, feasible if $`\sum_{i \in S} d_i \le K`$
+- $`S^*`$: the feasible group with the largest $`\sum_{i \in S} s_i`$ (all $`2^6 = 64`$ groups are checked)
+- $`W^*_{-i}`$: the best total score the other teams could reach if $`i`$ were absent
+- $`p_i = W^*_{-i} - \sum_{j \in S^* \setminus \lbrace i \rbrace} s_j`$: VCG payment in score units (×10 = priority credits)
+- $`u_i = v_i - \lambda e_i - p_i`$ if $`i \in S^*`$, otherwise $`u_i = 0`$: payoff
 
 ### Timing
 
-1. Each team learns its own $v_i$.
-2. All teams submit $r_i$ at the same time.
-3. The rule selects $S^*$, allocates the full $d_i$ to each $i \in S^*$, and charges $p_i$.
+1. Each team learns its own $`v_i`$.
+2. All teams submit $`r_i`$ at the same time.
+3. The rule selects $`S^*`$, allocates the full $`d_i`$ to each $`i \in S^*`$, and charges $`p_i`$.
 
 Truthful reporting is optimal whatever the others report (DSIC), so teams need no beliefs about the other teams' values.
 
@@ -56,13 +56,19 @@ Truthful reporting is optimal whatever the others report (DSIC), so teams need n
 
 | Format | Game class + solution | Equilibrium condition used | Benchmark strategy |
 |---|---|---|---|
-| Carbon-aware multi-team VCG | Static + incomplete; direct mechanism; **DSIC (therefore also BNE)** | $u_i(v_i, v_i, r_{-i}) \ge u_i(v_i, r_i, r_{-i})\ \ \forall r_i, r_{-i}$ | $r_i = v_i$ |
+| Carbon-aware multi-team VCG | Static + incomplete; direct mechanism; **DSIC (therefore also BNE)** | $`u_i(v_i, v_i, r_{-i}) \ge u_i(v_i, r_i, r_{-i})\ \forall r_i, r_{-i}`$ | $`r_i = v_i`$ |
 
-- **Utility.** A selected team bears its own announced carbon penalty: $u_i = v_i - \lambda e_i - p_i$ if selected, and 0 otherwise.
-- **Payment.** $p_i = W^*_{-i} - \sum_{j \in S^* \setminus i}(r_j - \lambda e_j)$, where $W^*_{-i}$ is the best total score of the other teams without $i$.
-- **Why truth is dominant (Groves argument).** Substituting the payment gives $u_i = \big[\text{total score of } S^* \text{ evaluated at } i\text{'s true value}\big] - W^*_{-i}$. The second term does not depend on $r_i$, and reporting $r_i = v_i$ makes the mechanism maximize exactly the first term. Therefore truth is optimal for every $r_{-i}$. The full sketch is in the notebook.
-- **Why the carbon term matters.** If utility were $v_i - p_i$, the best report would be $r_i = v_i + \lambda e_i$, and DSIC would fail.
-- **Special case.** With one item and $\lambda = 0$, the rule is the Vickrey second-price auction.
+- **Utility.** A selected team bears its own announced carbon penalty: $`u_i = v_i - \lambda e_i - p_i`$ if selected, and 0 otherwise.
+- **Payment.** $`p_i = W^*_{-i} - \sum_{j \in S^* \setminus \lbrace i \rbrace}(r_j - \lambda e_j)`$, where $`W^*_{-i}`$ is the best total score of the other teams without $`i`$.
+- **Why truth is dominant (Groves argument).** Substituting the payment gives
+
+  ```math
+  u_i = \Bigl(\text{total score of } S^* \text{ evaluated at } i\text{'s true value}\Bigr) - W^*_{-i}.
+  ```
+
+  The second term does not depend on $`r_i`$, and reporting $`r_i = v_i`$ makes the mechanism maximize exactly the first term. Therefore truth is optimal for every $`r_{-i}`$. The full sketch is in the notebook.
+- **Why the carbon term matters.** If utility were $`v_i - p_i`$, the best report would be $`r_i = v_i + \lambda e_i`$, and DSIC would fail.
+- **Special case.** With one item and $`\lambda = 0`$, the rule is the Vickrey second-price auction.
 
 DSIC needs priority credits to carry a real future opportunity cost. The code checks the rule, not that condition.
 
@@ -70,13 +76,13 @@ DSIC needs priority credits to carry a real future opportunity cost. The code ch
 
 | Symbol | Meaning | Value |
 |---|---|---|
-| $K$ | shared GPU-hours | 100 |
-| $n$ | project teams | 6 |
-| $d_i$ | GPU-hours requested (observable) | A, D: 25 · B, E: 20 · C, F: 15 |
-| $v_i$ | true project value (private) | A, D: 9 · B, E: 6 · C, F: 3 (High / Medium / Low) |
-| $r_i$ | reported value | $r_i = v_i$ in the baseline; varied 0–10 in the truthfulness check |
-| $e_i$ | estimated emissions, kg CO₂e | $0.24\,d_i$ |
-| $\lambda$ | carbon penalty per kg CO₂e | 0.5 (sensitivity: 0, 1) |
+| $`K`$ | shared GPU-hours | 100 |
+| $`n`$ | project teams | 6 |
+| $`d_i`$ | GPU-hours requested (observable) | A, D: 25 · B, E: 20 · C, F: 15 |
+| $`v_i`$ | true project value (private) | A, D: 9 · B, E: 6 · C, F: 3 (High / Medium / Low) |
+| $`r_i`$ | reported value | $`r_i = v_i`$ in the baseline; varied 0–10 in the truthfulness check |
+| $`e_i`$ | estimated emissions, kg CO₂e | $`0.24\,d_i`$ |
+| $`\lambda`$ | carbon penalty per kg CO₂e | 0.5 (sensitivity: 0, 1) |
 | — | priority credits per score unit | 10 |
 | — | FCFS arrival orders | all 6! = 720, plus one illustrative order A→B→E→C→D→F |
 
@@ -126,7 +132,7 @@ Truthfulness check:
 | Carbon-adjusted true score | 16.96 | 15.6–19.2 | 19.2 |
 | Estimated emissions (kg CO₂e) | 23.28 | 21.6–24.0 | 21.6 |
 
-Under FCFS, each 25- or 20-hour team is served in 76.7% of orders, and each 15-hour team in 93.3%. No arrival order beats the VCG score. FCFS serves slightly more teams on average, but it uses more capacity and emits more.
+Under FCFS, each 25- or 20-hour team is served in 76.7% of orders, and each 15-hour team in 93.3%. No arrival order beats the VCG score; only 48 of 720 orders tie it. FCFS serves slightly more teams on average, but it uses more capacity and emits more.
 
 **Utility and payments under VCG** (`colab/outputs/vcg_team_results.csv`): A and D each have utility 9 − 3 − 2.4 = 3.6. B and E each have 6 − 2.4 − 2.4 = 1.2. C and F are not selected, so their utility is 0.
 
@@ -134,7 +140,7 @@ Under FCFS, each 25- or 20-hour team is served in 76.7% of orders, and each 15-h
 
 **Carbon-penalty sensitivity** (demands, values, capacity, and algorithm fixed):
 
-| $\lambda$ | Selected teams | GPU-hours | Emissions (kg CO₂e) |
+| $`\lambda`$ | Selected teams | GPU-hours | Emissions (kg CO₂e) |
 |---:|---|---:|---:|
 | 0.0 | A, B, C, D, F | 100 | 24.0 |
 | 0.5 | A, B, D, E | 90 | 21.6 |
@@ -188,7 +194,7 @@ colab/                             computational artifact (Colab simulation)
 
 - **Computed, not observed.** Every number here comes from the formal model. The code checks the announced allocation and payment rule, but it cannot verify a team's true private value.
 - **Behavioral evidence lives in the Hugging Face Space and is exploratory.** The Space's rival teams are simulated and truthful. Classroom play is a small, self-selected sample with hypothetical stakes, so it is not population-level causal evidence.
-- **Assumptions.** The 0.24 kg CO₂e per GPU-hour rate and $\lambda = 0.5$ are announced classroom-model assumptions, not measured emissions for real workloads. Heterogeneous hardware, location, or time-specific emissions are out of scope.
+- **Assumptions.** The 0.24 kg CO₂e per GPU-hour rate and $`\lambda = 0.5`$ are announced classroom-model assumptions, not measured emissions for real workloads. Heterogeneous hardware, location, or time-specific emissions are out of scope.
 - **DSIC condition.** Truthful reporting is dominant only if priority credits have a real future opportunity cost and teams internalize the announced carbon penalty.
 - **Scale.** Exhaustive search (2ⁿ groups) is exact for six teams. Larger n would need an integer-programming solver.
 
