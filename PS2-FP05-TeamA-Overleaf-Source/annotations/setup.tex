@@ -1,0 +1,85 @@
+% Visible, printable teaching notes. The original ACM text area is unchanged.
+% Use main.tex for the clean submission and annotated.tex for guidance.
+\ifTeachingAnnotations
+\usepackage{eso-pic,tikz}
+\usepackage[most]{tcolorbox}
+\definecolor{AnnReplace}{HTML}{245BB4}
+\definecolor{AnnConnect}{HTML}{08756C}
+\definecolor{AnnDevelop}{HTML}{79469C}
+\definecolor{AnnInk}{HTML}{21324A}
+\definecolor{AnnRail}{HTML}{F4F6FA}
+\definecolor{AnnLine}{HTML}{D4DCE7}
+\newsavebox{\AnnRailBox}
+\newcommand{\AnnNote}[4]{%
+  \begin{tcolorbox}[enhanced,sharp corners,boxrule=0pt,frame hidden,
+    colback=#2!5!white,borderline west={2pt}{0pt}{#2},
+    left=7pt,right=7pt,top=5pt,bottom=5pt,before skip=6pt,after skip=0pt]
+    \sffamily\fontsize{9.4}{11.8}\selectfont\color{AnnInk}\raggedright
+    {\color{#2}\bfseries #1\quad #3}\par\vspace{2pt}#4
+  \end{tcolorbox}}
+\newcommand{\AnnPin}[4]{%
+  \node[rounded corners=2bp,fill=#2,text=white,inner xsep=4bp,
+    inner ysep=2.5bp,font=\sffamily\bfseries\fontsize{8}{9}\selectfont]
+    at (#3,#4) {#1};}
+\newcommand{\AnnPageTitle}{%
+  \ifcase\value{page}\or
+    Keep the PS1 structure\or
+    Integrate evidence and impact\or
+    Preserve the appendix sequence\or
+    Update the same cumulative map\or
+    Add only the PS2 extension record\else
+    Continue the documented draft\fi}
+\newcommand{\AnnPageNotes}{%
+  \ifcase\value{page}\or\input{annotations/page1}\or
+    \input{annotations/page2}\or\input{annotations/page3}\or
+    \input{annotations/page4}\or\input{annotations/page5}\else
+    \AnnNote{D}{AnnDevelop}{Return to the clean driver}{Use \texttt{main.tex} for submission. Recheck the two-page main limit and preserve supporting evidence in the appendices.}
+  \fi}
+\newcommand{\AnnPagePins}{%
+  \ifcase\value{page}\or
+    \AnnPin{R1}{AnnReplace}{31}{88}
+    \AnnPin{R2}{AnnReplace}{31}{370}
+    \AnnPin{C1}{AnnConnect}{31}{510}
+    \AnnPin{D1}{AnnDevelop}{581}{400}
+  \or
+    \AnnPin{C2}{AnnConnect}{31}{94}
+    \AnnPin{D2}{AnnDevelop}{31}{240}
+    \AnnPin{R3}{AnnReplace}{581}{340}
+  \or
+    \AnnPin{R4}{AnnReplace}{31}{105}
+    \AnnPin{D3}{AnnDevelop}{31}{390}
+    \AnnPin{C3}{AnnConnect}{581}{240}
+  \or
+    \AnnPin{R5}{AnnReplace}{31}{92}
+    \AnnPin{C4}{AnnConnect}{31}{260}
+    \AnnPin{D4}{AnnDevelop}{31}{420}
+  \or
+    \AnnPin{D5}{AnnDevelop}{31}{92}
+    \AnnPin{C5}{AnnConnect}{31}{310}
+    \AnnPin{D6}{AnnDevelop}{581}{260}
+  \fi}
+\AddToHook{shipout/before}{\global\pdfpagewidth=912bp\relax}
+\AddToShipoutPictureBG{\AtPageUpperLeft{%
+  \begin{tikzpicture}[overlay,x=1bp,y=-1bp]
+    \fill[AnnRail] (612,0) rectangle (912,792);
+    \draw[AnnLine,line width=.6bp] (612,0)--(612,792);
+  \end{tikzpicture}}}
+\AddToShipoutPictureFG{\AtPageUpperLeft{%
+  \savebox{\AnnRailBox}{\normalfont\begin{minipage}[t]{266bp}\AnnPageNotes\end{minipage}}
+  \begin{tikzpicture}[overlay,x=1bp,y=-1bp]
+    \AnnPagePins
+    \node[anchor=north west,inner sep=0,text width=266bp] at (629,26) {%
+      \sffamily\color{AnnInk}\fontsize{10}{12}\selectfont\raggedright
+      \textbf{PS2 / ANNOTATED WORKING COPY}\par\vspace{5pt}
+      {\fontsize{15}{17}\selectfont\bfseries\AnnPageTitle}\par\vspace{7pt}
+      {\fontsize{9}{11}\selectfont
+      \textcolor{AnnReplace}{\textbf{R REPLACE}}\quad
+      \textcolor{AnnConnect}{\textbf{C CONNECT}}\quad
+      \textcolor{AnnDevelop}{\textbf{D DEVELOP}}}};
+    \node[anchor=north west,inner sep=0] at (629,102) {\usebox{\AnnRailBox}};
+    \node[anchor=north west,inner sep=0,text width=266bp] at (629,748) {%
+      \sffamily\fontsize{8.4}{10.2}\selectfont\color{AnnInk}
+      Guidance is scaffolding. Submit from \texttt{main.tex}.
+      \textbf{\thepage/5}};
+  \end{tikzpicture}}}
+\fi

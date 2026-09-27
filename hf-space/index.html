@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sharing 100 GPU-Hours</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Carlito is metric-compatible with Calibri, for devices without Calibri -->
+  <link href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400&family=EB+Garamond:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="wipe" aria-hidden="true"><i></i></div>
+
+  <main class="frame">
+    <button class="about-link" data-about>About &amp; evidence</button>
+
+    <!-- I. Rule explainer (~14 s) -->
+    <section class="scene" id="intro">
+      <div class="label" id="introLabel">The problem</div>
+      <div class="stage">
+        <div class="viz" id="introViz"></div>
+        <p class="caption" id="introText" aria-live="polite"></p>
+      </div>
+      <div class="controls">
+        <button class="btn ghost" id="replay">Replay</button>
+        <button class="btn" id="skip">Skip ›</button>
+      </div>
+    </section>
+
+    <!-- II. Stage 1: FCFS -->
+    <section class="scene" id="stage1" hidden>
+      <div class="label">Stage 1 · First come, first served</div>
+      <h1>You are <em class="me"></em>.</h1>
+      <p class="lede">100 GPU-hours, six teams. Set your request. The other five teams stay hidden until you submit.</p>
+
+      <p class="secret">Your <b>true project value</b> is <b class="tv"></b> out of 10 <span class="tag">private</span><br>
+        <small>How much the GPU time is really worth to your project. Only you know it.</small></p>
+
+      <div class="form">
+        <label>GPU-hours requested <small>(max 30 per team)</small> <output id="dOut"></output>
+          <input type="range" id="d" min="5" max="30" step="5" value="20"></label>
+        <p class="note" id="preview1"></p>
+        <button class="btn" id="submit1">Submit request</button>
+      </div>
+
+      <div class="cards" id="cards1"></div>
+      <p class="note" id="rule1" hidden>Teams arrive in a random order. Each full request is granted if it still fits. Project value plays no role.</p>
+      <div class="viz" id="bar1"></div>
+      <ol class="log" id="log1"></ol>
+      <p class="result" id="res1"></p>
+      <div class="controls"><button class="btn" id="next1" hidden>Stage 2 ›</button></div>
+    </section>
+
+    <!-- III. Stage 2: report, predict, then scored group selection -->
+    <section class="scene" id="stage2" hidden>
+      <div class="label">Stage 2 · Scored group selection</div>
+      <h1>Same request. New rivals.</h1>
+      <p class="lede">Your GPU request and true value stay the same. The other five teams drew new requests and are hidden again.</p>
+
+      <ol class="rule">
+        <li>Each team <b>reports</b> a project value. The rule cannot see true values.</li>
+        <li><b>Score</b> = reported value − carbon penalty, where the penalty is 0.5 × (0.24 kg CO₂e per GPU-hour) = <b>0.12 × GPU-hours</b>.</li>
+        <li>Check <b>every group</b> of teams that fits in 100 GPU-hours and choose the one with the <b>highest total score</b>. Several teams win at once.</li>
+        <li>Each winner <b>pays</b> what their seat cost the other teams (VCG), in priority credits.</li>
+      </ol>
+
+      <div class="cards" id="cards2"></div>
+
+      <div class="form" id="form2">
+        <p class="secret">Your true value: <b class="tv"></b> <span class="tag">private</span></p>
+        <label>Value you report to the rule <small>(1–10; it may differ from your true value)</small> <output id="rOut"></output>
+          <input type="range" id="r" min="1" max="10" step="1"></label>
+        <p class="note" id="preview2"></p>
+      </div>
+
+      <div class="ask" id="ask">
+        <p>Will <em class="me"></em> be selected?</p>
+        <button class="btn" data-guess="yes">Yes, selected</button>
+        <button class="btn" data-guess="no">No, left out</button>
+      </div>
+
+      <div id="out2" hidden>
+        <h2>Ranked by reported score <span class="tag">computed</span></h2>
+        <table class="rank" id="rank"></table>
+        <div class="viz" id="bar2"></div>
+        <p class="result" id="best"></p>
+        <div id="why"></div>
+        <h2 id="payHead" hidden>Payments</h2>
+        <div id="pay"></div>
+        <p class="result" id="verdict"></p>
+
+        <div id="whatif" hidden>
+          <h2>What if you had reported something else? <span class="tag">computed</span></h2>
+          <p class="note">Rivals and your request stay fixed. Move the slider to re-run the rule with a different report.
+            Utility = true value − your carbon penalty − payment if selected, otherwise 0.</p>
+          <label class="whatif-label">Report <output id="wOut"></output>
+            <input type="range" id="w" min="0" max="10" step="0.5"></label>
+          <p class="result" id="wRes"></p>
+          <svg id="curve" viewBox="0 0 600 220" role="img" aria-label="Your utility for each possible report"></svg>
+          <p class="note" id="wNote"></p>
+        </div>
+        <div class="controls"><button class="btn" id="next2" hidden>Compare ›</button></div>
+      </div>
+    </section>
+
+    <!-- IV. Comparison + reflection -->
+    <section class="scene" id="compare" hidden>
+      <div class="label">Comparison</div>
+      <h1>Same six teams, two rules.</h1>
+      <p class="lede" id="cmpLede"></p>
+      <table class="cmp" id="cmp"></table>
+
+      <h2>Reflection <span class="tag">observed</span></h2>
+      <div class="form reflect">
+        <fieldset>
+          <legend>Which rule fits shared university GPUs better?</legend>
+          <label><input type="radio" name="pref" value="FCFS"> First come, first served</label>
+          <label><input type="radio" name="pref" value="Scored"> Scored group selection</label>
+          <label><input type="radio" name="pref" value="Unsure"> Not sure</label>
+        </fieldset>
+        <label><span id="reportQ"></span>
+          <textarea id="whyReport" rows="2"></textarea></label>
+        <label>What surprised you, if anything?
+          <textarea id="surprise" rows="2"></textarea></label>
+      </div>
+      <p class="note">This page stores nothing. To take part in the class study, press <b>Copy my result</b>, then <b>Submit to class form</b> and paste the line there. After that, press <b>Play again</b> and hand the device to the next person.</p>
+      <textarea id="summary" class="summary" rows="3" readonly></textarea>
+      <div class="controls">
+        <button class="btn" id="copy">Copy my result</button>
+        <!-- Class Google Form for classroom play results. -->
+        <a class="btn" id="formLink" href="https://docs.google.com/forms/d/e/1FAIpQLScbw80C64jSEzBNlc20B_njqjcB7g5HUnMRyiGuB6O6MIoHbA/viewform" target="_blank" rel="noopener">Submit to class form ↗</a>
+        <button class="btn ghost" id="again">Play again</button>
+        <button class="btn ghost" id="toIntro">Replay intro</button>
+      </div>
+    </section>
+
+    <!-- V. About & evidence -->
+    <section class="scene prose" id="about" hidden>
+      <div class="label">About &amp; evidence</div>
+      <h1>What this Space shows, and what it cannot.</h1>
+
+      <h2>Decision setting</h2>
+      <p>Six project teams share 100 university GPU-hours. Each team has an observable GPU request (up to 30 hours),
+        estimated emissions of 0.24 kg CO₂e per GPU-hour, and a private project value from 1 to 10.
+        Requests add up to more than the capacity, so a rule must decide who runs.</p>
+
+      <h2>Rational benchmark</h2>
+      <ul>
+        <li><b>First come, first served:</b> the outcome depends only on the random arrival order and request sizes.
+          Project value plays no role, so there is nothing to misreport.</li>
+        <li><b>Scored group selection (VCG):</b> reporting your true value is a dominant strategy (DSIC). It is optimal
+          whatever the others report, when utility = true value − own carbon penalty − payment and priority credits have
+          a real future cost. The <i>What if</i> slider lets you check this in every game.</li>
+        <li>A player who understands the rule can predict their own selection from the scores and the 100-hour limit.</li>
+      </ul>
+
+      <h2>Behavioral alternatives we look for</h2>
+      <ul>
+        <li><b>Overreporting</b> to raise the chance of being selected.</li>
+        <li><b>Underreporting</b> to save credits, carried over from pay-your-bid auction intuition.</li>
+        <li><b>Ranking heuristic:</b> predicting winners by going down the score ranking instead of comparing whole groups.</li>
+        <li><b>Single-winner model:</b> expecting only one team to win, as in a classic second-price auction.</li>
+        <li><b>Queue fairness:</b> preferring first come, first served as fairer even when it wastes capacity or adds emissions.</li>
+      </ul>
+
+      <h2>Evidence labels</h2>
+      <ul class="labels">
+        <li><span class="tag">observed</span> your own choices in this session: request, report, prediction, reflection. This page does not store them; you choose whether to submit them through the class form.</li>
+        <li><span class="tag">simulated</span> the five rival teams. They report truthfully and are drawn from the repo's Low / Medium / High tiers (15 h·3, 20 h·6, 25 h·9).</li>
+        <li><span class="tag">computed</span> allocations, payments, utilities and the <i>What if</i> curve. They come from a port of the repo code, checked against the repo outputs.</li>
+        <li><span class="tag">planned</span> classroom peer-play. Players submit their copied result lines through a Google Form, and we compare predictions, reports and preferences with the computed outcomes.</li>
+      </ul>
+
+      <h2>Limits of classroom evidence</h2>
+      <ul>
+        <li>Small and self-selected: classmates at one symposium, not a random sample of GPU users.</li>
+        <li>Hypothetical stakes: priority credits here have no real future cost, which weakens the DSIC condition.</li>
+        <li>Simulated, truthful rivals: real teams may misreport or coordinate.</li>
+        <li>The interface itself frames choices (default report = true value, the order of explanations).</li>
+        <li>So the results are exploratory. They can challenge an assumption, but they are not population-level causal evidence.</li>
+      </ul>
+
+      <h2>Code and reproducibility</h2>
+      <p>All calculations run in your browser in <code>app.js</code>, a line-by-line port of
+        <a href="https://github.com/GihoonE/COMPSCI206-PS2/blob/main/colab/src/gpu_allocation.py" target="_blank" rel="noopener">colab/src/gpu_allocation.py</a>.
+        Running <code>node app.js</code> checks it against the repo's <code>outputs/</code> and tests truthful reporting on 200 random games.
+        Repository: <a href="https://github.com/GihoonE/COMPSCI206-PS2" target="_blank" rel="noopener">GihoonE/COMPSCI206-PS2</a>.</p>
+
+      <div class="controls"><button class="btn" id="back">‹ Back</button></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

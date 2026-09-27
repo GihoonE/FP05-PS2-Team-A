@@ -1,0 +1,112 @@
+\section{Three connected research questions and verified gap}
+
+\noindent
+Universities increasingly compete for scarce GPU capacity as AI research outpaces compute budgets. First-come-first-served allocation ignores project value and urgency, wasting scientific value and unpriced carbon.
+
+\vspace{3pt}
+
+\noindent
+The closest work, Zachariadis et al.'s FAIR-Compute report~\cite{fair_compute2026}, shows value-blind scheduling wastes a third of scientific value, but leaves incentive-compatible, carbon-aware allocation as unbuilt future work. We build exactly that, at small, exactly-solvable scale.
+
+\vspace{3pt}
+
+\noindent
+\textbf{Q1---Economics:} How should an institution allocate scarce GPU-hours to maximize project value net of carbon cost, when teams privately know their own value and can misreport it?\par
+\textbf{Q2---Computation:} Can an exactly-solvable multi-team VCG mechanism allocate more efficiently than first-come-first-served, while staying auditable?\par
+\textbf{Q3---Behavior:} Do participants report values close to the truthful benchmark, or does behavior deviate---and do their predictions and reflections show understanding of the rule?
+
+\vspace{3pt}
+
+\noindent
+Together: can a transparent, carbon-aware rule replace arrival order, and does its advantage survive behavioral and computational limits? Figure~\ref{fig:teaser} traces model (Q1) and its exact computation (Q2); the behavioral test (Q3) is described in Section 4.
+
+\section{Answer to Q1: incentives and strategic model}
+
+\noindent
+\textbf{Hypothesis.} An incentive-compatible, carbon-aware mechanism increases realized value and reduces emissions per unit of value, without misreporting.
+
+\vspace{3pt}
+
+\noindent
+\textbf{Model.} Six teams $i\in\{A,\dots,F\}$ compete for $K=100$ GPU-hours. Each privately knows value $v_i \in \{3,6,9\}$; demand $d_i$ is observable, emissions $e_i=0.24d_i$ kg CO$_2$e, carbon weight $\lambda=0.5$ (stated parameters, not empirical estimates). Teams simultaneously submit one report $r_i$ (static, incomplete information).
+
+\vspace{3pt}
+
+\noindent
+\textbf{Allocation and payment.} Score $s_i=r_i-\lambda e_i$; select feasible $S^*$ maximizing $\sum_{i\in S}s_i$ s.t. $\sum_{i\in S}d_i\le K$ (demand enters only as the constraint). Each winner pays the Clarke--Groves externality $p_i = W_{-i}^* - \sum_{j\in S^*\setminus\{i\}}s_j$~\cite{clarke1971,groves1973} (Appendix~A); utility is $u_i=v_i-\lambda e_i-p_i$ if selected, else 0.
+
+\vspace{3pt}
+
+\noindent
+\textbf{Solution concept.} Truthful reporting $r_i=v_i$ is dominant---stronger than Nash/Bayesian Nash equilibrium~\cite{nash1950,harsanyi1968}---holding only because each team bears its own carbon penalty in $u_i$ (else the optimum shifts to $r_i=v_i+\lambda e_i$) and credits carry real future cost; verified numerically over $[0,10]$ (Appendix~A.2).
+
+\vspace{3pt}
+
+\noindent
+\textbf{Three lenses.} Game theory yields the dominant-strategy prediction; social choice frames value-net-of-carbon under capacity, surfacing an efficiency--access trade-off (Appendix~C); mechanism design specifies the report space, rules, and two verified tests (Appendix~C).
+
+\section{Answer to Q2: computation, auction comparison, and artifacts}
+
+\noindent
+\textbf{Inputs.} Six teams (A--F): demands $(25,20,15,25,20,15)$, values $(9,6,3,9,6,3)$. FCFS is evaluated over all 720 arrival orders; VCG enumerates all 64 feasible subsets and re-solves per winner for payments (Appendix~A.1--A.2).
+
+\textbf{Result.} VCG selects $\{A,B,D,E\}$ (score 19.2)---no FCFS order of 720 exceeds it (range 15.6–19.2; mean 16.96). Emissions per value fall from 0.81--0.84 to 0.72 kg CO$_2$e. One verified synthetic instance, not general evidence (Appendix~A, GitHub).
+
+\section{Answer to Q3: behavior and interdisciplinary integration}
+
+\noindent
+\textbf{Rational benchmark.} Section~2 establishes $r_i=v_i$ as dominant under VCG; FCFS has no reporting decision at all.
+
+\vspace{3pt}
+
+\noindent
+\textbf{Behavioral evidence.} Users experience FCFS, then report a value under VCG and predict their own selection---testing whether they report truthfully and understand the rule. Responses are exploratory only, not general behavioral evidence.
+
+\vspace{3pt}
+
+\noindent
+\textbf{Interaction.} Users play one team through both FCFS and VCG stages, predicting their own selection before seeing the result, then inspect the ranking, payments, and utility (full mechanics in Appendix~F.1). All evidence is exploratory, with participant count and conditions reported.
+
+\vspace{3pt}
+
+\noindent
+\textbf{Discriminating observation.} Misreporting with a wrong prediction suggests misunderstanding; misreporting with a correct prediction and a strategic reflection suggests genuine deviation---guiding interface or model revision, not causal claims.
+
+\section{Advanced development, real-world impact, and roadmap}
+
+\noindent
+This proposal builds on two Nobel-recognized foundations: Vickrey's theory of incentives under asymmetric information~\cite{vickrey1961,nobel1996} and Hurwicz--Maskin--Myerson's mechanism design theory~\cite{nobel2007}---agents can be motivated to reveal the truth without verifying private information. GPU demand and carbon data are now specific enough to deploy this cheaply; only integrating both, plus a planned behavioral test, closes the two gaps left by Section~1's closest prior work.
+
+\vspace{3pt}
+
+\noindent
+The concrete case is a shared university GPU cluster. Teams benefit from allocation reflecting true value; administrators gain an auditable record; the public bears the carbon cost regardless of who benefits. Honest reporting is incentivized, but truthfulness relative to a team's actual beliefs is not independently verifiable. Academic adoption would accept a transparent pilot; industry would demand robustness at hundreds of teams; public institutions would require an independently re-runnable audit. Next test: a pilot comparing self-reported value against ex-post outcomes at a scale where exact solving is no longer tractable.
+
+\vspace{3pt}
+
+\begin{table}[h]
+\caption{From foundations to a collaborative interdisciplinary contribution.}
+\begin{tabularx}{\columnwidth}{@{}p{1.6cm}Y@{}}
+\toprule
+\textbf{Horizon}&\textbf{Milestone and evidence}\\
+\midrule
+Foundation&Vickrey~\cite{nobel1996} and Hurwicz--Maskin--Myerson~\cite{nobel2007}: incentive-compatible allocation without verifying private information.\\
+PS2&Six-team carbon-aware VCG mechanism, exactly solved and verified against a random-order first-come-first-served baseline over all 720 arrival orders (Appendix~A).\\
+Symposium&Poster claim on institutional GPU governance; peer challenge on carbon-weight calibration and private-value verifiability; response via the audit-trail transparency argument.\\
+Next study&Pilot comparing self-reported value against independent, ex-post project outcomes at a scale where exact solving is no longer tractable.\\
+2056&Auditable mechanism-design tool adopted by a real institution for actual, not simulated, compute governance.\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\vspace{3pt}
+
+\noindent
+\noindent\textbf{Expected 2056 Nobel Prize and Turing Award contribution statement.}
+By 2056, we aim to be recognized for an efficient, publicly auditable governance framework for scarce shared infrastructure, integrating an incentive-compatible mechanism, verifiable computation, and behavioral evidence on truthful reporting. Progress moves from this six-team simulation to a real institutional pilot, correctable through a public, re-runnable audit log.
+
+\subsection*{Open Science Statement}
+GitHub (\url{https://github.com/GihoonE/COMPSCI206-PS2}) contains the FCFS/VCG code, tests, and outputs; a self-contained Colab notebook (\url{https://colab.research.google.com/drive/1uBTife193s0VDvmCZH3UQG1Q-UMNEcNx#scrollTo=f8338dd7}); a Hugging Face Space (\url{https://huggingface.co/spaces/dku-comsci-econ206-2026/PS2_Team_A}); README with run instructions. Inputs are synthetic ($d_i\in\{15,20,25\}$, $v_i\in\{3,6,9\}$; the Space allows continuous ranges), clearly labeled. Results from commit d93fc2e (tag ps2-review). Limitation: exact enumeration does not scale past small team counts.
+
+\subsection*{Statement of Contribution to the UN's SDGs}
+Connects to SDG~13 (carbon priced into allocation) and SDG~9 (auditable infrastructure rule). Audience: compute administrators and research teams; minimal access needs. Indicator: emissions per unit of allocated value. Possible unintended effect: urgency inflation beyond the report's resolution, or $\lambda$ disadvantaging compute-heavy research. Intended mechanism only---no adoption has occurred.

@@ -1,0 +1,217 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="815" viewBox="0 0 1500 815" font-family="Helvetica, Arial, sans-serif">
+<rect width="1500" height="815" fill="#FFFFFF"/>
+<rect x="20.0" y="10.0" width="470.0" height="710.0" rx="8" fill="#FFFFFF" stroke="#CBD0D8" stroke-width="1"/>
+<rect x="36.0" y="26.0" width="30.0" height="30.0" rx="15" fill="#2F4B7C" stroke="none" stroke-width="1"/>
+<text x="51.0" y="46.6" font-size="16" fill="#FFFFFF" text-anchor="middle" xml:space="preserve"><tspan font-weight="bold">1</tspan></text>
+<text x="78.0" y="48.0" font-size="20" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan font-weight="bold">Strategic Reports from Teams</tspan></text>
+<text x="78.0" y="71.5" font-size="13" fill="#6B7280" text-anchor="start" xml:space="preserve"><tspan >Teams report private value; demand and emissions are observable</tspan></text>
+<rect x="32.0" y="90.0" width="446.0" height="46.0" rx="4" fill="#F4F5F7" stroke="none" stroke-width="1"/>
+<text x="36.0" y="117.2" font-size="12" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan font-weight="bold">Team</tspan></text>
+<text x="170.0" y="109.7" font-size="12" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan font-weight="bold">Demand</tspan></text>
+<text x="170.0" y="124.7" font-size="12" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan font-style="italic">d</tspan><tspan dy="3.6" font-style="italic" font-size="8.6">i</tspan><tspan dy="-3.6"> (h)</tspan></text>
+<text x="270.0" y="109.7" font-size="12" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan font-weight="bold">Reported</tspan></text>
+<text x="270.0" y="124.7" font-size="12" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan font-style="italic">r</tspan><tspan dy="3.6" font-style="italic" font-size="8.6">i</tspan></text>
+<text x="350.0" y="109.7" font-size="12" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan font-weight="bold">CO₂e</tspan></text>
+<text x="350.0" y="124.7" font-size="12" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan font-style="italic">e</tspan><tspan dy="3.6" font-style="italic" font-size="8.6">i</tspan><tspan dy="-3.6"> (kg)</tspan></text>
+<text x="435.0" y="109.7" font-size="12" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan font-weight="bold">Score</tspan></text>
+<text x="435.0" y="124.7" font-size="12" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan font-style="italic">s</tspan><tspan dy="3.6" font-style="italic" font-size="8.6">i</tspan><tspan dy="-3.6"> = </tspan><tspan font-style="italic">r</tspan><tspan dy="3.6" font-style="italic" font-size="8.6">i</tspan><tspan dy="-3.6"> − λ</tspan><tspan font-style="italic">e</tspan><tspan dy="3.6" font-style="italic" font-size="8.6">i</tspan></text>
+<rect x="38.0" y="164.0" width="12.0" height="12.0" rx="2" fill="#5B7DB1" stroke="none" stroke-width="1"/>
+<text x="58.0" y="174.9" font-size="14" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan font-weight="bold">Team A</tspan></text>
+<rect x="120.0" y="165.0" width="60.0" height="10.0" rx="5" fill="#E5E7EB" stroke="none" stroke-width="1"/>
+<rect x="120.0" y="165.0" width="60.0" height="10.0" rx="5" fill="#5B7DB1" stroke="none" stroke-width="1"/>
+<text x="185.0" y="174.9" font-size="14" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan >25</tspan></text>
+<text x="270.0" y="174.9" font-size="14" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan font-weight="bold">9</tspan></text>
+<text x="350.0" y="174.9" font-size="14" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan >6.0</tspan></text>
+<text x="435.0" y="174.9" font-size="14" fill="#2F4B7C" text-anchor="middle" xml:space="preserve"><tspan >6.0</tspan></text>
+<line x1="32" y1="200" x2="478" y2="200" stroke="#CBD0D8" stroke-width="1"/>
+<rect x="38.0" y="222.0" width="12.0" height="12.0" rx="2" fill="#6FA27A" stroke="none" stroke-width="1"/>
+<text x="58.0" y="232.9" font-size="14" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan font-weight="bold">Team B</tspan></text>
+<rect x="120.0" y="223.0" width="60.0" height="10.0" rx="5" fill="#E5E7EB" stroke="none" stroke-width="1"/>
+<rect x="120.0" y="223.0" width="48.0" height="10.0" rx="5" fill="#6FA27A" stroke="none" stroke-width="1"/>
+<text x="185.0" y="232.9" font-size="14" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan >20</tspan></text>
+<text x="270.0" y="232.9" font-size="14" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan font-weight="bold">6</tspan></text>
+<text x="350.0" y="232.9" font-size="14" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan >4.8</tspan></text>
+<text x="435.0" y="232.9" font-size="14" fill="#2F4B7C" text-anchor="middle" xml:space="preserve"><tspan >3.6</tspan></text>
+<line x1="32" y1="258" x2="478" y2="258" stroke="#CBD0D8" stroke-width="1"/>
+<rect x="38.0" y="280.0" width="12.0" height="12.0" rx="2" fill="#9486B8" stroke="none" stroke-width="1"/>
+<text x="58.0" y="290.9" font-size="14" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan font-weight="bold">Team C</tspan></text>
+<rect x="120.0" y="281.0" width="60.0" height="10.0" rx="5" fill="#E5E7EB" stroke="none" stroke-width="1"/>
+<rect x="120.0" y="281.0" width="36.0" height="10.0" rx="5" fill="#9486B8" stroke="none" stroke-width="1"/>
+<text x="185.0" y="290.9" font-size="14" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan >15</tspan></text>
+<text x="270.0" y="290.9" font-size="14" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan font-weight="bold">3</tspan></text>
+<text x="350.0" y="290.9" font-size="14" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan >3.6</tspan></text>
+<text x="435.0" y="290.9" font-size="14" fill="#2F4B7C" text-anchor="middle" xml:space="preserve"><tspan >1.2</tspan></text>
+<line x1="32" y1="316" x2="478" y2="316" stroke="#CBD0D8" stroke-width="1"/>
+<rect x="38.0" y="338.0" width="12.0" height="12.0" rx="2" fill="#D4935F" stroke="none" stroke-width="1"/>
+<text x="58.0" y="348.9" font-size="14" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan font-weight="bold">Team D</tspan></text>
+<rect x="120.0" y="339.0" width="60.0" height="10.0" rx="5" fill="#E5E7EB" stroke="none" stroke-width="1"/>
+<rect x="120.0" y="339.0" width="60.0" height="10.0" rx="5" fill="#D4935F" stroke="none" stroke-width="1"/>
+<text x="185.0" y="348.9" font-size="14" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan >25</tspan></text>
+<text x="270.0" y="348.9" font-size="14" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan font-weight="bold">9</tspan></text>
+<text x="350.0" y="348.9" font-size="14" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan >6.0</tspan></text>
+<text x="435.0" y="348.9" font-size="14" fill="#2F4B7C" text-anchor="middle" xml:space="preserve"><tspan >6.0</tspan></text>
+<line x1="32" y1="374" x2="478" y2="374" stroke="#CBD0D8" stroke-width="1"/>
+<rect x="38.0" y="396.0" width="12.0" height="12.0" rx="2" fill="#C06C6C" stroke="none" stroke-width="1"/>
+<text x="58.0" y="406.9" font-size="14" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan font-weight="bold">Team E</tspan></text>
+<rect x="120.0" y="397.0" width="60.0" height="10.0" rx="5" fill="#E5E7EB" stroke="none" stroke-width="1"/>
+<rect x="120.0" y="397.0" width="48.0" height="10.0" rx="5" fill="#C06C6C" stroke="none" stroke-width="1"/>
+<text x="185.0" y="406.9" font-size="14" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan >20</tspan></text>
+<text x="270.0" y="406.9" font-size="14" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan font-weight="bold">6</tspan></text>
+<text x="350.0" y="406.9" font-size="14" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan >4.8</tspan></text>
+<text x="435.0" y="406.9" font-size="14" fill="#2F4B7C" text-anchor="middle" xml:space="preserve"><tspan >3.6</tspan></text>
+<line x1="32" y1="432" x2="478" y2="432" stroke="#CBD0D8" stroke-width="1"/>
+<rect x="38.0" y="454.0" width="12.0" height="12.0" rx="2" fill="#6FA9B8" stroke="none" stroke-width="1"/>
+<text x="58.0" y="464.9" font-size="14" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan font-weight="bold">Team F</tspan></text>
+<rect x="120.0" y="455.0" width="60.0" height="10.0" rx="5" fill="#E5E7EB" stroke="none" stroke-width="1"/>
+<rect x="120.0" y="455.0" width="36.0" height="10.0" rx="5" fill="#6FA9B8" stroke="none" stroke-width="1"/>
+<text x="185.0" y="464.9" font-size="14" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan >15</tspan></text>
+<text x="270.0" y="464.9" font-size="14" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan font-weight="bold">3</tspan></text>
+<text x="350.0" y="464.9" font-size="14" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan >3.6</tspan></text>
+<text x="435.0" y="464.9" font-size="14" fill="#2F4B7C" text-anchor="middle" xml:space="preserve"><tspan >1.2</tspan></text>
+<rect x="32.0" y="510.0" width="446.0" height="196.0" rx="6" fill="#F4F5F7" stroke="none" stroke-width="1"/>
+<text x="46.0" y="534.9" font-size="14" fill="#2F4B7C" text-anchor="start" xml:space="preserve"><tspan font-weight="bold">Information structure</tspan></text>
+<text x="46.0" y="567.5" font-size="13" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan >•  Private: project value </tspan><tspan font-style="italic">r</tspan><tspan dy="3.9" font-style="italic" font-size="9.4">i</tspan><tspan dy="-3.9"> (may be misreported)</tspan></text>
+<text x="46.0" y="603.5" font-size="13" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan >•  Observable: demand </tspan><tspan font-style="italic">d</tspan><tspan dy="3.9" font-style="italic" font-size="9.4">i</tspan><tspan dy="-3.9"> and estimated emissions </tspan><tspan font-style="italic">e</tspan><tspan dy="3.9" font-style="italic" font-size="9.4">i</tspan></text>
+<text x="46.0" y="639.5" font-size="13" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan >•  Carbon weight λ = 0.5; capacity </tspan><tspan font-style="italic">K</tspan><tspan > = 100 GPU-hours</tspan></text>
+<text x="46.0" y="675.5" font-size="13" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan >•  Total demand = 120 GPU-hours &gt; </tspan><tspan font-style="italic">K</tspan><tspan > (contested)</tspan></text>
+<rect x="510.0" y="10.0" width="480.0" height="710.0" rx="8" fill="#FFFFFF" stroke="#CBD0D8" stroke-width="1"/>
+<rect x="526.0" y="26.0" width="30.0" height="30.0" rx="15" fill="#2F4B7C" stroke="none" stroke-width="1"/>
+<text x="541.0" y="46.6" font-size="16" fill="#FFFFFF" text-anchor="middle" xml:space="preserve"><tspan font-weight="bold">2</tspan></text>
+<text x="568.0" y="48.0" font-size="20" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan font-weight="bold">Carbon-Aware VCG Allocation</tspan></text>
+<text x="568.0" y="71.5" font-size="13" fill="#6B7280" text-anchor="start" xml:space="preserve"><tspan >Select the feasible set maximizing carbon-adjusted reported value</tspan></text>
+<rect x="522.0" y="90.0" width="456.0" height="190.0" rx="6" fill="#F4F5F7" stroke="none" stroke-width="1"/>
+<text x="536.0" y="114.9" font-size="14" fill="#2F4B7C" text-anchor="start" xml:space="preserve"><tspan font-weight="bold">Optimization problem</tspan></text>
+<text x="538.0" y="152.9" font-size="14" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan font-weight="bold">maximize</tspan></text>
+<text x="628.0" y="155.0" font-size="20" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan >Σ</tspan><tspan dy="6.0" font-style="italic" font-size="14.4">i</tspan><tspan font-size="14.4">∈</tspan><tspan font-style="italic" font-size="14.4">S</tspan><tspan dy="-6.0"> (</tspan><tspan font-style="italic">r</tspan><tspan dy="6.0" font-style="italic" font-size="14.4">i</tspan><tspan dy="-6.0"> − λ</tspan><tspan font-style="italic">e</tspan><tspan dy="6.0" font-style="italic" font-size="14.4">i</tspan><tspan dy="-6.0">)</tspan></text>
+<text x="538.0" y="196.9" font-size="14" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan font-weight="bold">subject to</tspan></text>
+<text x="628.0" y="199.0" font-size="20" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan >Σ</tspan><tspan dy="6.0" font-style="italic" font-size="14.4">i</tspan><tspan font-size="14.4">∈</tspan><tspan font-style="italic" font-size="14.4">S</tspan><tspan dy="-6.0"> </tspan><tspan font-style="italic">d</tspan><tspan dy="6.0" font-style="italic" font-size="14.4">i</tspan><tspan dy="-6.0"> ≤ </tspan><tspan font-style="italic">K</tspan></text>
+<text x="538.0" y="248.9" font-size="14" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan font-style="italic">K</tspan><tspan > = 100 GPU-hours,  λ = 0.5</tspan></text>
+<line x1="810" y1="126" x2="810" y2="266" stroke="#CBD0D8" stroke-width="1"/>
+<text x="822.0" y="143.2" font-size="12" fill="#6B7280" text-anchor="start" xml:space="preserve"><tspan font-style="italic">r</tspan><tspan dy="3.6" font-style="italic" font-size="8.6">i</tspan><tspan dy="-3.6"> : reported value</tspan></text>
+<text x="822.0" y="171.2" font-size="12" fill="#6B7280" text-anchor="start" xml:space="preserve"><tspan font-style="italic">d</tspan><tspan dy="3.6" font-style="italic" font-size="8.6">i</tspan><tspan dy="-3.6"> : GPU-hours requested</tspan></text>
+<text x="822.0" y="199.2" font-size="12" fill="#6B7280" text-anchor="start" xml:space="preserve"><tspan font-style="italic">e</tspan><tspan dy="3.6" font-style="italic" font-size="8.6">i</tspan><tspan dy="-3.6"> : estimated CO₂e (kg)</tspan></text>
+<text x="822.0" y="227.2" font-size="12" fill="#6B7280" text-anchor="start" xml:space="preserve"><tspan >λ : carbon weight</tspan></text>
+<text x="822.0" y="255.2" font-size="12" fill="#6B7280" text-anchor="start" xml:space="preserve"><tspan font-style="italic">K</tspan><tspan > : capacity</tspan></text>
+<rect x="522.0" y="294.0" width="456.0" height="300.0" rx="6" fill="#F4F5F7" stroke="none" stroke-width="1"/>
+<text x="536.0" y="318.9" font-size="14" fill="#2F4B7C" text-anchor="start" xml:space="preserve"><tspan font-weight="bold">Exhaustive search over feasible subsets</tspan></text>
+<rect x="538.0" y="334.0" width="140.0" height="32.0" rx="4" fill="#FFFFFF" stroke="#CBD0D8" stroke-width="1"/>
+<text x="608.0" y="354.9" font-size="14" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan >{A, B}</tspan></text>
+<rect x="538.0" y="374.0" width="140.0" height="32.0" rx="4" fill="#FFFFFF" stroke="#CBD0D8" stroke-width="1"/>
+<text x="608.0" y="394.9" font-size="14" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan >{A, C, D}</tspan></text>
+<rect x="538.0" y="414.0" width="140.0" height="32.0" rx="4" fill="#FFFFFF" stroke="#CBD0D8" stroke-width="1"/>
+<text x="608.0" y="434.9" font-size="14" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan >{B, C, E}</tspan></text>
+<rect x="538.0" y="454.0" width="140.0" height="32.0" rx="4" fill="#2F4B7C" stroke="none" stroke-width="1"/>
+<text x="608.0" y="474.9" font-size="14" fill="#FFFFFF" text-anchor="middle" xml:space="preserve"><tspan font-weight="bold">{A, B, D, E}</tspan></text>
+<rect x="538.0" y="494.0" width="140.0" height="32.0" rx="4" fill="#FFFFFF" stroke="#CBD0D8" stroke-width="1"/>
+<text x="608.0" y="514.9" font-size="14" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan >{A, D, F}</tspan></text>
+<text x="608.0" y="554.9" font-size="14" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan >…</tspan></text>
+<text x="695.0" y="442.0" font-size="20" fill="#6B7280" text-anchor="middle" xml:space="preserve"><tspan >→</tspan></text>
+<rect x="710.0" y="334.0" width="256.0" height="248.0" rx="4" fill="#FFFFFF" stroke="#CBD0D8" stroke-width="1"/>
+<text x="838.0" y="360.2" font-size="15" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan >Winner set  </tspan><tspan font-weight="bold" font-style="italic">S</tspan><tspan font-weight="bold">* = {A, B, D, E}</tspan></text>
+<rect x="742.0" y="405.0" width="36.0" height="125.0" rx="0" fill="#5B7DB1" stroke="none" stroke-width="1"/>
+<text x="760.0" y="397.2" font-size="12" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan >25 h</tspan></text>
+<text x="760.0" y="546.5" font-size="13" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan font-weight="bold">A</tspan></text>
+<rect x="794.0" y="430.0" width="36.0" height="100.0" rx="0" fill="#6FA27A" stroke="none" stroke-width="1"/>
+<text x="812.0" y="422.2" font-size="12" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan >20 h</tspan></text>
+<text x="812.0" y="546.5" font-size="13" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan font-weight="bold">B</tspan></text>
+<rect x="846.0" y="405.0" width="36.0" height="125.0" rx="0" fill="#D4935F" stroke="none" stroke-width="1"/>
+<text x="864.0" y="397.2" font-size="12" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan >25 h</tspan></text>
+<text x="864.0" y="546.5" font-size="13" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan font-weight="bold">D</tspan></text>
+<rect x="898.0" y="430.0" width="36.0" height="100.0" rx="0" fill="#C06C6C" stroke="none" stroke-width="1"/>
+<text x="916.0" y="422.2" font-size="12" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan >20 h</tspan></text>
+<text x="916.0" y="546.5" font-size="13" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan font-weight="bold">E</tspan></text>
+<line x1="730" y1="530" x2="950" y2="530" stroke="#1F2937" stroke-width="1"/>
+<text x="838.0" y="568.5" font-size="13" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan >Total: 90 h ≤ </tspan><tspan font-style="italic">K</tspan><tspan > = 100 h</tspan></text>
+<rect x="522.0" y="608.0" width="456.0" height="108.0" rx="6" fill="#F4F5F7" stroke="none" stroke-width="1"/>
+<text x="536.0" y="632.9" font-size="14" fill="#2F4B7C" text-anchor="start" xml:space="preserve"><tspan font-weight="bold">VCG payment for each winner </tspan><tspan font-weight="bold" font-style="italic">i</tspan></text>
+<text x="538.0" y="677.0" font-size="20" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan font-style="italic">p</tspan><tspan dy="6.0" font-style="italic" font-size="14.4">i</tspan><tspan dy="-6.0"> = </tspan><tspan font-style="italic">W</tspan><tspan >*</tspan><tspan dy="6.0" font-size="14.4">−</tspan><tspan font-style="italic" font-size="14.4">i</tspan><tspan dy="-6.0"> − Σ</tspan><tspan dy="6.0" font-style="italic" font-size="14.4">j</tspan><tspan font-size="14.4">∈</tspan><tspan font-style="italic" font-size="14.4">S</tspan><tspan font-size="14.4">*∖{</tspan><tspan font-style="italic" font-size="14.4">i</tspan><tspan font-size="14.4">}</tspan><tspan dy="-6.0"> </tspan><tspan font-style="italic">s</tspan><tspan dy="6.0" font-style="italic" font-size="14.4">j</tspan></text>
+<text x="790.0" y="651.2" font-size="12" fill="#6B7280" text-anchor="start" xml:space="preserve"><tspan font-style="italic">p</tspan><tspan dy="3.6" font-style="italic" font-size="8.6">i</tspan><tspan dy="-3.6"> : VCG payment of team </tspan><tspan font-style="italic">i</tspan></text>
+<text x="790.0" y="675.2" font-size="12" fill="#6B7280" text-anchor="start" xml:space="preserve"><tspan font-style="italic">W</tspan><tspan >*</tspan><tspan dy="3.6" font-size="8.6">−</tspan><tspan font-style="italic" font-size="8.6">i</tspan><tspan dy="-3.6"> : optimal value without </tspan><tspan font-style="italic">i</tspan></text>
+<text x="790.0" y="699.2" font-size="12" fill="#6B7280" text-anchor="start" xml:space="preserve"><tspan font-style="italic">s</tspan><tspan dy="3.6" font-style="italic" font-size="8.6">j</tspan><tspan dy="-3.6"> : carbon-adjusted score of </tspan><tspan font-style="italic">j</tspan></text>
+<rect x="1010.0" y="10.0" width="470.0" height="710.0" rx="8" fill="#FFFFFF" stroke="#CBD0D8" stroke-width="1"/>
+<rect x="1026.0" y="26.0" width="30.0" height="30.0" rx="15" fill="#2F4B7C" stroke="none" stroke-width="1"/>
+<text x="1041.0" y="46.6" font-size="16" fill="#FFFFFF" text-anchor="middle" xml:space="preserve"><tspan font-weight="bold">3</tspan></text>
+<text x="1068.0" y="48.0" font-size="20" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan font-weight="bold">Outcomes and Properties</tspan></text>
+<text x="1068.0" y="71.5" font-size="13" fill="#6B7280" text-anchor="start" xml:space="preserve"><tspan >Transparent allocation, payments, and carbon-aware efficiency</tspan></text>
+<rect x="1022.0" y="90.0" width="446.0" height="100.0" rx="6" fill="#F4F5F7" stroke="none" stroke-width="1"/>
+<text x="1036.0" y="114.9" font-size="14" fill="#2F4B7C" text-anchor="start" xml:space="preserve"><tspan font-weight="bold">Resource allocation (</tspan><tspan font-weight="bold" font-style="italic">K</tspan><tspan font-weight="bold"> = 100 GPU-hours)</tspan></text>
+<rect x="1035.0" y="128.0" width="105.0" height="46.0" rx="0" fill="#5B7DB1" stroke="#FFFFFF" stroke-width="1"/>
+<text x="1087.5" y="147.4" font-size="13" fill="#FFFFFF" text-anchor="middle" xml:space="preserve"><tspan font-weight="bold">A</tspan></text>
+<text x="1087.5" y="163.7" font-size="13" fill="#FFFFFF" text-anchor="middle" xml:space="preserve"><tspan >25 h</tspan></text>
+<rect x="1140.0" y="128.0" width="84.0" height="46.0" rx="0" fill="#6FA27A" stroke="#FFFFFF" stroke-width="1"/>
+<text x="1182.0" y="147.4" font-size="13" fill="#FFFFFF" text-anchor="middle" xml:space="preserve"><tspan font-weight="bold">B</tspan></text>
+<text x="1182.0" y="163.7" font-size="13" fill="#FFFFFF" text-anchor="middle" xml:space="preserve"><tspan >20 h</tspan></text>
+<rect x="1224.0" y="128.0" width="105.0" height="46.0" rx="0" fill="#D4935F" stroke="#FFFFFF" stroke-width="1"/>
+<text x="1276.5" y="147.4" font-size="13" fill="#FFFFFF" text-anchor="middle" xml:space="preserve"><tspan font-weight="bold">D</tspan></text>
+<text x="1276.5" y="163.7" font-size="13" fill="#FFFFFF" text-anchor="middle" xml:space="preserve"><tspan >25 h</tspan></text>
+<rect x="1329.0" y="128.0" width="84.0" height="46.0" rx="0" fill="#C06C6C" stroke="#FFFFFF" stroke-width="1"/>
+<text x="1371.0" y="147.4" font-size="13" fill="#FFFFFF" text-anchor="middle" xml:space="preserve"><tspan font-weight="bold">E</tspan></text>
+<text x="1371.0" y="163.7" font-size="13" fill="#FFFFFF" text-anchor="middle" xml:space="preserve"><tspan >20 h</tspan></text>
+<rect x="1413.0" y="128.0" width="42.0" height="46.0" rx="0" fill="#FFFFFF" stroke="#9CA3AF" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="1434.0" y="148.2" font-size="10" fill="#6B7280" text-anchor="middle" xml:space="preserve"><tspan >Unused</tspan></text>
+<text x="1434.0" y="160.8" font-size="10" fill="#6B7280" text-anchor="middle" xml:space="preserve"><tspan >10 h</tspan></text>
+<rect x="1022.0" y="204.0" width="214.0" height="190.0" rx="6" fill="#F4F5F7" stroke="none" stroke-width="1"/>
+<text x="1036.0" y="228.9" font-size="14" fill="#2F4B7C" text-anchor="start" xml:space="preserve"><tspan font-weight="bold">Payments (VCG)</tspan></text>
+<text x="1036.0" y="250.6" font-size="13" fill="#6B7280" text-anchor="start" xml:space="preserve"><tspan >24 priority credits each</tspan></text>
+<rect x="1038.0" y="268.0" width="11.0" height="11.0" rx="2" fill="#5B7DB1" stroke="none" stroke-width="1"/>
+<text x="1056.0" y="278.6" font-size="13" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan >Team A</tspan></text>
+<text x="1220.0" y="278.6" font-size="13" fill="#1F2937" text-anchor="end" xml:space="preserve"><tspan >24</tspan></text>
+<rect x="1038.0" y="292.0" width="11.0" height="11.0" rx="2" fill="#6FA27A" stroke="none" stroke-width="1"/>
+<text x="1056.0" y="302.6" font-size="13" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan >Team B</tspan></text>
+<text x="1220.0" y="302.6" font-size="13" fill="#1F2937" text-anchor="end" xml:space="preserve"><tspan >24</tspan></text>
+<rect x="1038.0" y="316.0" width="11.0" height="11.0" rx="2" fill="#D4935F" stroke="none" stroke-width="1"/>
+<text x="1056.0" y="326.6" font-size="13" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan >Team D</tspan></text>
+<text x="1220.0" y="326.6" font-size="13" fill="#1F2937" text-anchor="end" xml:space="preserve"><tspan >24</tspan></text>
+<rect x="1038.0" y="340.0" width="11.0" height="11.0" rx="2" fill="#C06C6C" stroke="none" stroke-width="1"/>
+<text x="1056.0" y="350.6" font-size="13" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan >Team E</tspan></text>
+<text x="1220.0" y="350.6" font-size="13" fill="#1F2937" text-anchor="end" xml:space="preserve"><tspan >24</tspan></text>
+<line x1="1036" y1="360" x2="1222" y2="360" stroke="#1F2937" stroke-width="1"/>
+<text x="1036.0" y="379.6" font-size="13" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan font-weight="bold">Total</tspan></text>
+<text x="1220.0" y="379.6" font-size="13" fill="#1F2937" text-anchor="end" xml:space="preserve"><tspan font-weight="bold">96 credits</tspan></text>
+<rect x="1248.0" y="204.0" width="220.0" height="190.0" rx="6" fill="#F4F5F7" stroke="none" stroke-width="1"/>
+<text x="1262.0" y="228.9" font-size="14" fill="#2F4B7C" text-anchor="start" xml:space="preserve"><tspan font-weight="bold">Outcomes (selected set)</tspan></text>
+<text x="1260.0" y="257.2" font-size="12" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan >Total value Σ</tspan><tspan font-style="italic">r</tspan><tspan dy="3.6" font-style="italic" font-size="8.6">i</tspan></text>
+<text x="1456.0" y="257.9" font-size="14" fill="#2F4B7C" text-anchor="end" xml:space="preserve"><tspan font-weight="bold">30</tspan></text>
+<text x="1260.0" y="295.2" font-size="12" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan >Carbon-adjusted score</tspan></text>
+<text x="1456.0" y="295.9" font-size="14" fill="#2F4B7C" text-anchor="end" xml:space="preserve"><tspan font-weight="bold">19.2</tspan></text>
+<text x="1260.0" y="333.2" font-size="12" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan >Total CO₂e (kg)</tspan></text>
+<text x="1456.0" y="333.9" font-size="14" fill="#2F4B7C" text-anchor="end" xml:space="preserve"><tspan font-weight="bold">21.6</tspan></text>
+<text x="1260.0" y="371.2" font-size="12" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan >kg CO₂e per unit value</tspan></text>
+<text x="1456.0" y="371.9" font-size="14" fill="#2F4B7C" text-anchor="end" xml:space="preserve"><tspan font-weight="bold">0.72</tspan></text>
+<rect x="1022.0" y="408.0" width="446.0" height="136.0" rx="6" fill="#F4F5F7" stroke="none" stroke-width="1"/>
+<text x="1036.0" y="432.9" font-size="14" fill="#2F4B7C" text-anchor="start" xml:space="preserve"><tspan font-weight="bold">Comparison with first-come-first-served (FCFS)</tspan></text>
+<text x="1036.0" y="454.6" font-size="13" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan >FCFS score, illustrative single order</tspan></text>
+<text x="1454.0" y="454.9" font-size="14" fill="#1F2937" text-anchor="end" xml:space="preserve"><tspan font-weight="bold">15.6</tspan></text>
+<text x="1036.0" y="481.6" font-size="13" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan >FCFS mean score over all 720 orders</tspan></text>
+<text x="1454.0" y="481.9" font-size="14" fill="#1F2937" text-anchor="end" xml:space="preserve"><tspan font-weight="bold">16.96</tspan></text>
+<text x="1036.0" y="508.6" font-size="13" fill="#2F4B7C" text-anchor="start" xml:space="preserve"><tspan font-weight="bold">Carbon-aware VCG score</tspan></text>
+<text x="1454.0" y="508.9" font-size="14" fill="#2F4B7C" text-anchor="end" xml:space="preserve"><tspan font-weight="bold">19.2</tspan></text>
+<text x="1036.0" y="533.2" font-size="12" fill="#6B7280" text-anchor="start" xml:space="preserve"><tspan >✓ No FCFS order exceeds the VCG score</tspan></text>
+<rect x="1022.0" y="558.0" width="446.0" height="158.0" rx="6" fill="#F4F5F7" stroke="none" stroke-width="1"/>
+<text x="1036.0" y="582.9" font-size="14" fill="#2F4B7C" text-anchor="start" xml:space="preserve"><tspan font-weight="bold">Key economic properties</tspan></text>
+<rect x="1036.0" y="594.0" width="130.0" height="108.0" rx="4" fill="#FFFFFF" stroke="#CBD0D8" stroke-width="1"/>
+<rect x="1036.0" y="594.0" width="130.0" height="4.0" rx="0" fill="#2F4B7C" stroke="none" stroke-width="1"/>
+<text x="1101.0" y="638.3" font-size="13" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan >Truthful reporting</tspan></text>
+<text x="1101.0" y="654.5" font-size="13" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan >is dominant</tspan></text>
+<text x="1101.0" y="670.8" font-size="13" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan >(DSIC)</tspan></text>
+<rect x="1180.0" y="594.0" width="130.0" height="108.0" rx="4" fill="#FFFFFF" stroke="#CBD0D8" stroke-width="1"/>
+<rect x="1180.0" y="594.0" width="130.0" height="4.0" rx="0" fill="#2F4B7C" stroke="none" stroke-width="1"/>
+<text x="1245.0" y="646.4" font-size="13" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan >Social welfare</tspan></text>
+<text x="1245.0" y="662.7" font-size="13" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan >maximization</tspan></text>
+<rect x="1324.0" y="594.0" width="130.0" height="108.0" rx="4" fill="#FFFFFF" stroke="#CBD0D8" stroke-width="1"/>
+<rect x="1324.0" y="594.0" width="130.0" height="4.0" rx="0" fill="#2F4B7C" stroke="none" stroke-width="1"/>
+<text x="1389.0" y="646.4" font-size="13" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan >Carbon-aware</tspan></text>
+<text x="1389.0" y="662.7" font-size="13" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan >and transparent</tspan></text>
+<rect x="20.0" y="732.0" width="1460.0" height="72.0" rx="8" fill="#FFFFFF" stroke="#CBD0D8" stroke-width="1"/>
+<text x="202.5" y="764.1" font-size="14" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan font-weight="bold">Incentive-compatible</tspan></text>
+<text x="202.5" y="781.6" font-size="14" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan >truthful reporting (DSIC)</tspan></text>
+<line x1="385" y1="746" x2="385" y2="790" stroke="#CBD0D8" stroke-width="1"/>
+<text x="567.5" y="764.1" font-size="14" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan font-weight="bold">Exact enumeration</tspan></text>
+<text x="567.5" y="781.6" font-size="14" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan >720 FCFS orders / 64 VCG subsets</tspan></text>
+<line x1="750" y1="746" x2="750" y2="790" stroke="#CBD0D8" stroke-width="1"/>
+<text x="932.5" y="764.1" font-size="14" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan font-weight="bold">Lower emissions</tspan></text>
+<text x="932.5" y="781.6" font-size="14" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan >per unit of value</tspan></text>
+<line x1="1115" y1="746" x2="1115" y2="790" stroke="#CBD0D8" stroke-width="1"/>
+<text x="1297.5" y="764.1" font-size="14" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan font-weight="bold">Practical insights</tspan></text>
+<text x="1297.5" y="781.6" font-size="14" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan >for university GPU governance</tspan></text>
+</svg>

@@ -1,0 +1,64 @@
+\documentclass[sigconf,nonacm]{acmart}
+\settopmatter{printacmref=false,printfolios=true}
+\setcopyright{none}
+\renewcommand\footnotetextcopyrightpermission[1]{}
+\usepackage{amsmath,tabularx,array,enumitem,balance,tikz}
+\usepackage{xurl}
+\setlength{\parindent}{0pt}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric}
+\definecolor{CourseBlue}{HTML}{315EFB}
+\definecolor{CourseTeal}{HTML}{14877D}
+\definecolor{CourseInk}{HTML}{18324A}
+\hypersetup{colorlinks=true,linkcolor=CourseBlue,citecolor=CourseTeal,urlcolor=CourseTeal}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\setlist{leftmargin=*,topsep=3pt,itemsep=2pt}
+\newcommand{\CourseNumber}{COMSCI/ECON 206}
+\newcommand{\CourseName}{Computational Microeconomics}
+\newcommand{\CourseSession}{Autumn 2026 Session 1}
+\newcommand{\Instructor}{Professor Luyao Zhang}
+\newcommand{\TeamCode}{FP5}
+\newcommand{\SymposiumSession}{A}
+\newcommand{\GitHubLink}{\url{https://github.com/GihoonE/COMPSCI206-PS2}}
+\newcommand{\NotebookLink}{\url{https://colab.research.google.com/drive/1uBTife193s0VDvmCZH3UQG1Q-UMNEcNx#scrollTo=f8338dd7}}
+\newcommand{\HuggingFaceLink}{\url{https://huggingface.co/spaces/dku-comsci-econ206-2026/PS2_Team_A}}
+\newcommand{\PosterLink}{\textit{A0 poster in progress}}
+\newcommand{\coursemeta}{\noindent\textbf{Submission to:} \CourseNumber{} --- \CourseName.\\
+\textbf{Course session:} \CourseSession. \textbf{Team:} \TeamCode. \textbf{Symposium:} \SymposiumSession.\\
+\textbf{Course instructor:} \Instructor. \textbf{Assignment:} PS2 collaborative research proposal.\par\smallskip}
+\title{Transparent GPU-Hour Allocation: A Carbon-Aware VCG Mechanism for Shared Computing Resources}
+\author{Mustafa Ayub Khan}
+\affiliation{\institution{Duke Kunshan University}\city{Kunshan}\country{China}}
+\email{mak156@duke.edu}
+\author{Temur Akhtamjonov}
+\affiliation{\institution{Duke Kunshan University}\city{Kunshan}\country{China}}
+\email{ta245@duke.edu}
+\author{Gihun Lee}
+\affiliation{\institution{Duke Kunshan University}\city{Kunshan}\country{China}}
+\email{gl167@duke.edu}
+\renewcommand{\shortauthors}{Team \TeamCode}
+
+% The instructor is course metadata, not a paper author.
+% The annotated driver keeps this same paper layout and adds a printable side rail.
+\newif\ifTeachingAnnotations
+\TeachingAnnotationsfalse
+\input{annotations/setup}
+
+\begin{document}
+\begin{teaserfigure}
+\captionsetup{skip=8pt}
+\centering
+\input{figures/ps2_teaser.tex}
+\caption{
+Carbon-aware allocation of 100 shared GPU-hours across six project teams.
+We compare random-order FCFS with a VCG mechanism that selects the feasible team set
+maximizing reported project value minus a published carbon penalty and charges externality
+payments. Exact enumeration of all 720 FCFS orders and computational truthfulness checks
+provide the main evidence for comparing allocation efficiency, emissions, and strategic incentives.
+}
+\label{fig:teaser}
+\end{teaserfigure}
+\maketitle\raggedbottom\coursemeta
+
+\input{sections/proposal}
+\input{appendices/supporting}
+\end{document}

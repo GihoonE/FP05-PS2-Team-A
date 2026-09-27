@@ -1,0 +1,59 @@
+\documentclass[sigconf,nonacm]{acmart}
+\settopmatter{printacmref=false,printfolios=true}
+\setcopyright{none}
+\renewcommand\footnotetextcopyrightpermission[1]{}
+\usepackage{amsmath,tabularx,array,enumitem,balance,tikz}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric}
+\definecolor{CourseBlue}{HTML}{315EFB}
+\definecolor{CourseTeal}{HTML}{14877D}
+\definecolor{CourseInk}{HTML}{18324A}
+\hypersetup{colorlinks=true,linkcolor=CourseBlue,citecolor=CourseTeal,urlcolor=CourseTeal}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\setlist{leftmargin=*,topsep=3pt,itemsep=2pt}
+\newcommand{\CourseNumber}{COMSCI/ECON 206}
+\newcommand{\CourseName}{Computational Microeconomics}
+\newcommand{\CourseSession}{Autumn 2026 Session 1}
+\newcommand{\Instructor}{Professor Luyao Zhang}
+\newcommand{\TeamCode}{[FPXX]}
+\newcommand{\SymposiumSession}{[A/B/C/D]}
+\newcommand{\GitHubLink}{[Your team GitHub repository and exact commit/release]}
+\newcommand{\NotebookLink}{[Your runnable notebook URL]}
+\newcommand{\HuggingFaceLink}{[Your behavioral-science Hugging Face repository or Space]}
+\newcommand{\PosterLink}{[Your editable A0 poster filename or stable URL]}
+\newcommand{\coursemeta}{\noindent\textbf{Submission to:} \CourseNumber{} --- \CourseName.\\
+\textbf{Course session:} \CourseSession. \textbf{Team:} \TeamCode. \textbf{Symposium:} \SymposiumSession.\\
+\textbf{Course instructor:} \Instructor. \textbf{Assignment:} PS2 collaborative research proposal.\par\smallskip}
+\title{[A Specific, Researchable Collaborative Proposal Title]}
+\author{[Member 1 Full Name]}
+\affiliation{\institution{Duke Kunshan University}\city{Kunshan}\country{China}}
+\email{[Member 1 university email]}
+\author{[Member 2 Full Name]}
+\affiliation{\institution{Duke Kunshan University}\city{Kunshan}\country{China}}
+\email{[Member 2 university email]}
+\author{[Member 3 Full Name]}
+\affiliation{\institution{Duke Kunshan University}\city{Kunshan}\country{China}}
+\email{[Member 3 university email]}
+\renewcommand{\shortauthors}{Team \TeamCode}
+
+% The instructor is course metadata, not a paper author.
+% The annotated driver keeps this same paper layout and adds a printable side rail.
+\newif\ifTeachingAnnotations
+\TeachingAnnotationstrue
+\input{annotations/setup}
+
+\begin{document}
+\begin{teaserfigure}
+\captionsetup{skip=8pt}
+\centering
+\input{figures/ps2_teaser.tex}
+\caption{One integrated PS2 evidence chain. Economic reasoning defines the strategic question and institutional objective; reproducible computation tests the model; behavioral evidence probes assumptions; the A0 poster communicates the combined claim and its practical implications for a concrete real-world case. Replace every placeholder and distinguish completed evidence from planned work.}
+\Description{Three disciplinary panels for economics, computer science, and behavioral science flow into an interdisciplinary synthesis bar linking the strategic claim, GitHub evidence, Hugging Face evidence, A0 poster, and real-world impact.}
+\label{fig:teaser}
+\end{teaserfigure}
+\maketitle\raggedbottom\coursemeta
+
+\noindent\textcolor{CourseTeal}{\textbf{PS1-continuous template.}} This file intentionally retains the PS1 ACM layout, five-section main paper, Author Notes, references, and Appendices A--E. Appendix F contains only the additional PS2 team, auction, linked-artifact, poster, and symposium records. Keep Sections 1--5 within two main pages, including metadata, Figure~\ref{fig:teaser}, its caption, and artifact links.
+
+\input{sections/proposal}
+\input{appendices/supporting}
+\end{document}
