@@ -1,4 +1,4 @@
-# Transparent GPU-Hour Allocation
+# Transparent GPU-Hour Allocation.
 
 [![Hugging Face Space](https://img.shields.io/badge/Hugging%20Face-Live%20Space-FFD21E?logo=huggingface&logoColor=black)](https://huggingface.co/spaces/dku-comsci-econ206-2026/PS2_Team_A)
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1uBTife193s0VDvmCZH3UQG1Q-UMNEcNx)
