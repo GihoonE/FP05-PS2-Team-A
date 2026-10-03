@@ -165,7 +165,7 @@ The two largest jobs move to the cleaner pool. A and D pay more because, without
 
 \subsection{Reproducibility, limits, and AI-use disclosure}
 
-\textbf{Reproducibility.} The GitHub repository (\GitHubLink) contains the source code, tests, notebook, output files, and README instructions in \texttt{colab/}. The model, script, and tests use only the Python standard library. The notebook's utility plots use matplotlib, which Colab provides. Review-ready results come from commit \texttt{d93fc2e} (tag \texttt{ps2-review}); final results come from \needchange{final commit or tag}. Final rerun, October 3, 2026 (Python 3.14.7, macOS arm64): \texttt{run\_simulation.py} reproduces the committed outputs and writes \texttt{lambda\_sweep.csv}; 7 unit tests pass; the notebook passes 9/9 checks in an empty folder without the repository.
+\textbf{Reproducibility.} The GitHub repository (\GitHubLink) contains the source code, tests, notebook, output files, and README instructions in \texttt{colab/}. The model, script, and tests use only the Python standard library. The notebook's utility plots use matplotlib, which Colab provides. Review-ready results come from commit \texttt{d93fc2e}; final results come from commit \texttt{8a656a4} on the \texttt{main} branch of the classroom repository. Final rerun, October 3, 2026 (Python 3.14.7, macOS arm64): \texttt{run\_simulation.py} reproduces the committed outputs and writes \texttt{lambda\_sweep.csv}; 7 unit tests pass; the notebook passes 9/9 checks in an empty folder without the repository.
 
 \textbf{Limits.} This is a small synthetic example, not a field deployment. The 0.24 kg CO$_2$e per GPU-hour rate, the carbon weight, the value tiers, and the 10-credit conversion are classroom assumptions. Exact enumeration will not remain practical as the number of teams becomes large. The model also cannot verify a team's true private value. The baseline has one GPU type; the two-pool extension assumes a job needs the same GPU-hours on either type, whereas an A100 is slower than an H100 in practice, so it is a structural check and not an emissions estimate. Truthful reporting is dominant only if priority credits carry a real future opportunity cost; the code checks the rule, not that condition. Human play is limited to five self-plays by the authors against simulated, truthful rivals with hypothetical stakes, and their written reflections are blank.
 
@@ -202,7 +202,7 @@ Claude Code&\url{https://claude.com/claude-code}; Anthropic terms; Claude Opus 5
 All three results are computed from the formal model. Whether people report truthfully is observed only in five exploratory plays (Section~4); a larger classroom sample remains planned.
 
 \section{Review response and revision record}
-\textbf{Status.} This is the final version (v2). The review-ready version (v1, September 27, 2026) is preserved at tag \texttt{ps2-review} (commit \texttt{d93fc2e}). Peer reviews were written on paper forms at the symposium on Monday, September 28, 2026. Each consequential comment receives a Keep (K), Revise (R), or Investigate (I) decision, the changed location, and the rerun result.
+\textbf{Status.} This is the final version (v2). The review-ready version (v1, September 27, 2026) is preserved at commit \texttt{d93fc2e}. Peer reviews were written on paper forms at the symposium on Monday, September 28, 2026. Each consequential comment receives a Keep (K), Revise (R), or Investigate (I) decision, the changed location, and the rerun result.
 
 \textbf{Reviews received by Gihun Lee.}
 
@@ -227,7 +227,7 @@ Aaron Wang (FP8)&What would $\lambda$ be in a real setting?&\textbf{I.} $\lambda
 
 \clearpage\onecolumn
 \section{Structured abstract and cumulative proposal map}\label{app:abstract}
-PS2 is a new topic; the PS1 map is preserved in each author's PS1 submission. The table below is the final PS2 version (v2). The review-ready map (v1) is preserved at tag \texttt{ps2-review}; text added in v2 is marked \textbf{v2}.
+PS2 is a new topic; the PS1 map is preserved in each author's PS1 submission. The table below is the final PS2 version (v2). The review-ready map (v1) is preserved at commit \texttt{d93fc2e}; text added in v2 is marked \textbf{v2}.
 \par\medskip
 \begin{table}[H]
 \caption{Structured abstract and cumulative proposal map (PS2, final v2).}
@@ -297,7 +297,7 @@ In T3, any report $r_C\ge4.2$ gives Team C the same outcome as 4.5: the same sea
 {\footnotesize
 \begin{tabularx}{\columnwidth}{@{}p{1.75cm}Y@{}}\toprule
 \textbf{Artifact}&\textbf{Required parity check}\\\midrule
-GitHub&Model: \texttt{colab/src/gpu\_allocation.py}. Inputs: $K=100$, $d=(25,20,15,25,20,15)$, $v=(9,6,3,9,6,3)$, $\lambda=0.5$, 0.24\,kg/GPU-h, 10 cr./unit. Review-ready commit \texttt{d93fc2e}; final \needchange{commit or tag}. Runnable path: \texttt{python colab/run\_simulation.py}; tests: \texttt{cd colab \&\& python -m unittest discover -s tests}. Output: \texttt{colab/outputs/*.csv}, including \texttt{lambda\_sweep.csv}; FCFS 15.6 vs.\ VCG 19.2, 96 credits. \\
+GitHub&Model: \texttt{colab/src/gpu\_allocation.py}. Inputs: $K=100$, $d=(25,20,15,25,20,15)$, $v=(9,6,3,9,6,3)$, $\lambda=0.5$, 0.24\,kg/GPU-h, 10 cr./unit. Review-ready commit \texttt{d93fc2e}; final commit \texttt{8a656a4}. Runnable path: \texttt{python colab/run\_simulation.py}; tests: \texttt{cd colab \&\& python -m unittest discover -s tests}. Output: \texttt{colab/outputs/*.csv}, including \texttt{lambda\_sweep.csv}; FCFS 15.6 vs.\ VCG 19.2, 96 credits. \\
 Colab&\NotebookLink: self-contained copy of the same model code; a repository test checks that its model cells equal \texttt{src/}. Fresh-run cell: 9/9 checks PASS, including the carbon-weight sweep and the two-GPU-pool extension. The revised notebook is uploaded at the shared Colab link.\\
 Hugging Face&Space commit \texttt{ad5604b}. Same decision setting (100 GPU-h, six teams, $e_i=0.24d_i$, $\lambda=0.5$, same FCFS and VCG rules, same tie-break, same utility). Browser port of the model, cross-checked against Python on 300 random games. Behavioral assumption: rivals truthful; benchmark $r_i=v_i$. Evidence status: observed (own choices; five plays exported to \texttt{hf-space/plays.csv}), simulated (rivals), computed (outcomes), planned (a larger classroom sample). Privacy: the page stores and sends nothing; a player may copy the result line and submit it voluntarily through the class Google Form. The page states what the form collects (above the form button and in a ``Data and privacy'' section), asks players not to enter names, and says that lines may appear as an anonymous table.\\
 A0 poster&``Can a carbon-aware VCG rule allocate shared GPU-hours better than first come, first served?'' (A0 landscape, review-ready v1, Sep.~27). Same three-part structure (question \& model; design \& evidence; impact \& dialogue), inputs ($K=100$, six teams, $e_i=0.24d_i$, $\lambda=0.5$), payoff $u_i=v_i-\lambda e_i-p_i$, and results: VCG $\{A,B,D,E\}$, score 19.2 vs.\ FCFS mean 16.96; 0.72 vs.\ 0.81\,kg CO$_2$e per value; 4 vs.\ 4.93 teams served. Fig.~2 plots all 720 FCFS orders and Team C's misreport sweep. Real-world case, limitations, reviewer question, instructor, acknowledgements, and QR codes to the Space and GitHub (commit \texttt{d93fc2e}). Evidence status matches: computed; behavioral play planned. \needchange{update the poster if the commit, QR target, or reported results change.}\\\bottomrule
@@ -305,7 +305,7 @@ A0 poster&``Can a carbon-aware VCG rule allocate shared GPU-hours better than fi
 
 \subsection{Symposium and practical-impact record}
 
-\textbf{Presentation.} Monday, September 28, 2026, 2:45--5:15 p.m., IB~2050, Session~\SymposiumSession. We presented the review-ready version: paper v1 (tag \texttt{ps2-review}, commit \texttt{d93fc2e}) and the A0 poster ``review-ready v1, Sep.~27''. Both are retained unchanged in the repository history.
+\textbf{Presentation.} Monday, September 28, 2026, 2:45--5:15 p.m., IB~2050, Session~\SymposiumSession. We presented the review-ready version: paper v1 (commit \texttt{d93fc2e}) and the A0 poster ``review-ready v1, Sep.~27''. Both are retained unchanged in the repository history.
 
 \textbf{Peer evaluation and questions.} Gihun received six written reviews (Appendix~D). The questions were: where is the actual play data; why one GPU type; can the teaser be clearer; is truth optimal with and without the carbon charge; why $\lambda=0.5$; and what $\lambda$ would be in a real setting. \needchange{add the forms received by Mustafa and Temur, and keep the paper forms.}
 
