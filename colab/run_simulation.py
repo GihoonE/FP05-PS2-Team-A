@@ -12,6 +12,7 @@ from src.gpu_allocation import (
     fcfs_allocation,
     misreport_sweep,
     outcome_metrics,
+    team_utility,
     summarize_fcfs_orders,
     team_rows,
     vcg_allocation,
@@ -46,6 +47,24 @@ if __name__ == "__main__":
     sweep = [row for index in range(len(teams)) for row in misreport_sweep(teams, index, reports)]
     write_csv(output_directory / "truthfulness_check.csv", sweep)
 
+    # Carbon-weight sweep: allocation, payoffs, and DSIC at lambda = 0, 0.1, ..., 1.
+    lambda_rows = []
+    for step in range(11):
+        penalty = step / 10
+        outcome = vcg_allocation(teams, CAPACITY_GPU_HOURS, carbon_penalty_per_kg_co2e=penalty)
+        row = {"carbon_penalty_per_kg_co2e": penalty}
+        row.update({key: value for key, value in outcome_metrics(teams, outcome).items()
+                    if key not in ("mechanism", "carbon_penalty_per_kg_co2e")})
+        for index, team in enumerate(teams):
+            row[f"utility_{team.name[-1]}"] = round(team_utility(team, outcome, index), 2)
+        row["truthful_optimal_all_teams"] = all(
+            max(r["utility_score_units"] for r in misreport_sweep(
+                teams, index, reports, carbon_penalty_per_kg_co2e=penalty))
+            <= row[f"utility_{team.name[-1]}"] + 1e-9
+            for index, team in enumerate(teams))
+        lambda_rows.append(row)
+    write_csv(output_directory / "lambda_sweep.csv", lambda_rows)
+
     print("FCFS arrival order:", " -> ".join(teams[index].name for index in arrival_order))
     for result in summary:
         print("\n" + str(result["mechanism"]))
@@ -66,3 +85,8 @@ if __name__ == "__main__":
         best = max(row["utility_score_units"] for row in rows)
         print(f"  {team.name}: truthful utility {truthful}, best over all reports {best}"
               f" -> {'PASS' if best <= truthful + 1e-9 else 'FAIL'}")
+
+    print("\nCarbon-weight sweep (lambda: selected teams, credits, truthful optimal)")
+    for row in lambda_rows:
+        print(f"  {row['carbon_penalty_per_kg_co2e']:.1f}: {row['selected_teams']}, "
+              f"{row['total_priority_payment_credits']} credits, {row['truthful_optimal_all_teams']}")

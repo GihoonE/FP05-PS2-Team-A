@@ -1,0 +1,12 @@
+carbon_penalty_per_kg_co2e,selected_teams,teams_served,gpu_hours_used,unused_gpu_hours,total_true_project_value,carbon_adjusted_true_score,total_estimated_emissions_kg_co2e,total_priority_payment_score_units,total_priority_payment_credits,utility_A,utility_B,utility_C,utility_D,utility_E,utility_F,truthful_optimal_all_teams
+0.0,Team A; Team B; Team C; Team D; Team F,5,100,0.0,30,30.0,24.0,24.0,240.0,3.0,0.0,0.0,3.0,0.0,0.0,True
+0.1,Team A; Team B; Team D; Team E,4,90,10.0,30,27.84,21.6,21.12,211.2,3.12,0.24,0.0,3.12,0.24,0.0,True
+0.2,Team A; Team B; Team D; Team E,4,90,10.0,30,25.68,21.6,18.24,182.4,3.24,0.48,0.0,3.24,0.48,0.0,True
+0.3,Team A; Team B; Team D; Team E,4,90,10.0,30,23.52,21.6,15.36,153.6,3.36,0.72,0.0,3.36,0.72,0.0,True
+0.4,Team A; Team B; Team D; Team E,4,90,10.0,30,21.36,21.6,12.48,124.8,3.48,0.96,0.0,3.48,0.96,0.0,True
+0.5,Team A; Team B; Team D; Team E,4,90,10.0,30,19.2,21.6,9.6,96.0,3.6,1.2,0.0,3.6,1.2,0.0,True
+0.6,Team A; Team B; Team D; Team E,4,90,10.0,30,17.04,21.6,6.72,67.2,3.72,1.44,0.0,3.72,1.44,0.0,True
+0.7,Team A; Team B; Team D; Team E,4,90,10.0,30,14.88,21.6,3.84,38.4,3.84,1.68,0.0,3.84,1.68,0.0,True
+0.8,Team A; Team B; Team D; Team E,4,90,10.0,30,12.72,21.6,0.96,9.6,3.96,1.92,0.0,3.96,1.92,0.0,True
+0.9,Team A; Team B; Team D; Team E,4,90,10.0,30,10.56,21.6,0.0,0.0,3.6,1.68,0.0,3.6,1.68,0.0,True
+1.0,Team A; Team B; Team D; Team E,4,90,10.0,30,8.4,21.6,0.0,0.0,3.0,1.2,0.0,3.0,1.2,0.0,True

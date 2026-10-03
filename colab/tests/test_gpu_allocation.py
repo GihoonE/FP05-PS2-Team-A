@@ -16,6 +16,7 @@ from src.gpu_allocation import (
     misreport_sweep,
     outcome_metrics,
     team_rows,
+    team_utility,
     vcg_allocation,
 )
 
@@ -48,6 +49,24 @@ class TruthfulnessTest(unittest.TestCase):
 
     def test_dsic_on_fixed_example(self):
         self.assert_truthful_is_best(default_example()[0])
+
+    def test_dsic_at_every_carbon_weight(self):
+        teams, _ = default_example()
+        for step in range(11):
+            penalty = step / 10
+            outcome = vcg_allocation(teams, carbon_penalty_per_kg_co2e=penalty)
+            for index, team in enumerate(teams):
+                truthful = round(team_utility(team, outcome, index), 2)
+                best = max(row["utility_score_units"] for row in misreport_sweep(
+                    teams, index, REPORTS, carbon_penalty_per_kg_co2e=penalty))
+                self.assertLessEqual(best, truthful + 1e-9, (penalty, team.name))
+
+    def test_single_slot_without_carbon_is_a_vickrey_auction(self):
+        # One slot and lambda = 0: the highest report wins and pays the second-highest report.
+        teams = [Team("X", 100, 9, 9), Team("Y", 100, 6, 6), Team("Z", 100, 3, 3)]
+        outcome = vcg_allocation(teams, carbon_penalty_per_kg_co2e=0.0)
+        self.assertEqual(outcome.selected_indices, (0,))
+        self.assertEqual(outcome.payments_score_units, {0: 6.0})
 
     def test_dsic_on_random_instances(self):
         rng = random.Random(206)

@@ -1,5 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="815" viewBox="0 0 1500 815" font-family="Helvetica, Arial, sans-serif">
-<rect width="1500" height="815" fill="#FFFFFF"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="907" viewBox="0 0 1500 907" font-family="Helvetica, Arial, sans-serif">
+<rect width="1500" height="907" fill="#FFFFFF"/>
+<g id="rq">
+<rect x="20" y="10" width="470" height="76" rx="8" fill="#FFFFFF" stroke="#CBD0D8" stroke-width="1"/>
+<rect x="36" y="24" width="34" height="22" rx="4" fill="#2F4B7C" stroke="none"/>
+<text x="53" y="39.5" font-size="12" fill="#FFFFFF" text-anchor="middle" xml:space="preserve"><tspan font-weight="bold">Q1</tspan></text>
+<text x="82" y="37" font-size="12" fill="#2F4B7C" text-anchor="start" letter-spacing="0.4" xml:space="preserve"><tspan font-weight="bold">ECONOMICS</tspan></text>
+<text x="82" y="56" font-size="13" fill="#374151" text-anchor="start" xml:space="preserve"><tspan >How should scarce GPU-hours be allocated for value net of</tspan></text>
+<text x="82" y="73" font-size="13" fill="#374151" text-anchor="start" xml:space="preserve"><tspan >carbon when teams can misreport their private value?</tspan></text>
+<rect x="510" y="10" width="480" height="76" rx="8" fill="#FFFFFF" stroke="#CBD0D8" stroke-width="1"/>
+<rect x="526" y="24" width="34" height="22" rx="4" fill="#2F4B7C" stroke="none"/>
+<text x="543" y="39.5" font-size="12" fill="#FFFFFF" text-anchor="middle" xml:space="preserve"><tspan font-weight="bold">Q2</tspan></text>
+<text x="572" y="37" font-size="12" fill="#2F4B7C" text-anchor="start" letter-spacing="0.4" xml:space="preserve"><tspan font-weight="bold">COMPUTATION</tspan></text>
+<text x="572" y="56" font-size="13" fill="#374151" text-anchor="start" xml:space="preserve"><tspan >Can an exactly solved multi-team VCG beat first come, first</tspan></text>
+<text x="572" y="73" font-size="13" fill="#374151" text-anchor="start" xml:space="preserve"><tspan >served and stay auditable?</tspan></text>
+<rect x="1010" y="10" width="470" height="76" rx="8" fill="#FFFFFF" stroke="#CBD0D8" stroke-width="1"/>
+<rect x="1026" y="24" width="34" height="22" rx="4" fill="#2F4B7C" stroke="none"/>
+<text x="1043" y="39.5" font-size="12" fill="#FFFFFF" text-anchor="middle" xml:space="preserve"><tspan font-weight="bold">Q3</tspan></text>
+<text x="1072" y="37" font-size="12" fill="#2F4B7C" text-anchor="start" letter-spacing="0.4" xml:space="preserve"><tspan font-weight="bold">BEHAVIOR</tspan></text>
+<text x="1072" y="56" font-size="13" fill="#374151" text-anchor="start" xml:space="preserve"><tspan >Do people report truthfully and understand the rule?</tspan></text>
+<text x="1072" y="73" font-size="13" fill="#374151" text-anchor="start" xml:space="preserve"><tspan >(Hugging Face Space, Section 4)</tspan></text>
+</g>
+<g transform="translate(0,92)">
 <rect x="20.0" y="10.0" width="470.0" height="710.0" rx="8" fill="#FFFFFF" stroke="#CBD0D8" stroke-width="1"/>
 <rect x="36.0" y="26.0" width="30.0" height="30.0" rx="15" fill="#2F4B7C" stroke="none" stroke-width="1"/>
 <text x="51.0" y="46.6" font-size="16" fill="#FFFFFF" text-anchor="middle" xml:space="preserve"><tspan font-weight="bold">1</tspan></text>
@@ -214,4 +235,5 @@
 <line x1="1115" y1="746" x2="1115" y2="790" stroke="#CBD0D8" stroke-width="1"/>
 <text x="1297.5" y="764.1" font-size="14" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan font-weight="bold">Practical insights</tspan></text>
 <text x="1297.5" y="781.6" font-size="14" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan >for university GPU governance</tspan></text>
+</g>
 </svg>
