@@ -4,7 +4,7 @@
 \section{Three connected research questions and verified gap}
 
 \noindent
-Universities increasingly compete for scarce GPU capacity as AI research outpaces compute budgets. First-come-first-served allocation ignores project value and urgency, wasting scientific value and unpriced carbon.
+Organizations increasingly face scarce GPU capacity as AI workloads grow. First-come-first-served allocation ignores project value and urgency, potentially misallocating scarce compute and leaving carbon costs unaccounted for.
 
 \vspace{3pt}
 
@@ -124,7 +124,7 @@ Plays in which a misreport raised utility & 0 & 0\\\bottomrule
 \vspace{3pt}
 
 \noindent
-\emph{Agreement.} The payoff prediction held in every play: no overreport raised the player's utility. Two overreports left utility unchanged, and one bought a seat that cost 36 credits and was worth nothing net of carbon ($u=-3.6$ against 0 for the truth). \emph{Gap.} The behavioral prediction did not hold: three of five players overreported (by 4, 4, and 1), although the report field starts at the true value. Both wrong predictions were pessimistic (``left out'' when the team was selected). \emph{Consequence.} We retain the dominant-strategy result as a statement about payoffs and qualify the assumption that players see it: truthful reporting was optimal but not typical. The written reflections were left blank in all five plays. Asked afterwards, the players gave two reasons for overreporting: wanting to be selected, and misunderstanding the rule. These match explanations~(ii) and~(i), but they are recollections given after the result was known and were not recorded per play, so we do not assign them to individual plays. One further observation is consistent with explanation~(i): a symposium reviewer who had read the rule asked whether truthful reporting is optimal with and without the carbon charge (Appendix~D). These are five self-plays by the authors, who know the rule, against simulated rivals; they are exploratory and support no population claim. That informed players still overreported suggests that naive participants would deviate at least as often, which is a hypothesis for the planned classroom sample, not a finding.
+\emph{Agreement.} The payoff prediction held in every play: no overreport raised the player's utility. Two overreports left utility unchanged, and one bought a seat that cost 36 credits and was worth nothing net of carbon ($u=-3.6$ against 0 for the truth). \emph{Gap.} The behavioral prediction did not hold: three of five players overreported (by 4, 4, and 1), although the report field starts at the true value. Both wrong predictions were pessimistic (``left out'' when the team was selected). \emph{Consequence.} We retain the dominant-strategy result as a statement about payoffs and qualify the assumption that players see it: truthful reporting was optimal but not typical. The written reflections were left blank in all five plays. Asked afterwards, the players gave two reasons for overreporting: wanting to be selected, and misunderstanding the rule. These match explanations~(ii) and~(i), but they are recollections given after the result was known and were not recorded per play, so we do not assign them to individual plays. One further observation is consistent with explanation~(i): a symposium reviewer who had read the rule asked whether truthful reporting is optimal with and without the carbon charge (Appendix~D). These are five self-plays by the authors, who know the rule, against simulated rivals; they are exploratory and support no population claim. These observations motivate a larger classroom sample with written reflections, but they do not predict how often other participants will misreport.
 
 \vspace{3pt}
 
@@ -139,7 +139,7 @@ Plays in which a misreport raised utility & 0 & 0\\\bottomrule
 \section{Advanced development, real-world impact, and roadmap}
 
 \noindent
-This proposal builds on two Nobel-recognized foundations: Vickrey's theory of incentives under asymmetric information~\cite{vickrey1961,nobel1996} and Hurwicz--Maskin--Myerson's mechanism design theory~\cite{nobel2007}---agents can be motivated to reveal the truth without verifying private information. GPU demand and carbon data are now specific enough to deploy this cheaply; only integrating both, plus a planned behavioral test, closes the two gaps left by Section~1's closest prior work.
+This proposal builds on two Nobel-recognized foundations: Vickrey's theory of incentives under asymmetric information~\cite{vickrey1961,nobel1996} and Hurwicz--Maskin--Myerson's mechanism design theory~\cite{nobel2007}---agents can be motivated to reveal the truth without verifying private information. The model is specified enough to support a transparent pilot design, but its parameters remain classroom assumptions. Integrating incentive-compatible allocation, an explicit carbon objective, and exploratory behavioral evidence addresses the two gaps left by Section~1's closest prior work.
 
 \vspace{3pt}
 
@@ -156,8 +156,8 @@ The concrete case is a shared university GPU cluster. Teams benefit from allocat
 \midrule
 Foundation&Vickrey~\cite{nobel1996} and Hurwicz--Maskin--Myerson~\cite{nobel2007}: incentive-compatible allocation without verifying private information.\\
 PS2&Six-team carbon-aware VCG mechanism, exactly solved and verified against a random-order first-come-first-served baseline over all 720 arrival orders (Appendix~A).\\
-Symposium&Poster on institutional GPU governance (Sept.~28). Peer challenges: carbon-weight calibration, a single GPU type, missing play data, and whether truth stays optimal with a carbon charge. Response: a $\lambda$ sweep, a two-GPU-pool extension, and computed behavior scenarios (Appendix~D).\\
-Next study&Pilot comparing self-reported value against independent, ex-post project outcomes at a scale where exact solving is no longer tractable.\\
+Symposium&Poster on institutional GPU governance (Sept.~28). Peer challenges: carbon-weight calibration, a single GPU type, missing play data, and whether truth stays optimal with a carbon charge. Response: a $\lambda$ sweep, a two-GPU-pool extension, computed behavior scenarios, and five recorded self-plays (Appendix~D).\\
+Next study&A rerun of the FCFS--VCG comparison over randomly drawn values and requests, then a pilot comparing self-reported value against independent, ex-post project outcomes at a scale where exact solving is no longer tractable.\\
 2056&Auditable mechanism-design tool adopted by a real institution for actual, not simulated, compute governance.\\
 \bottomrule
 \end{tabularx}
@@ -170,7 +170,7 @@ Next study&Pilot comparing self-reported value against independent, ex-post proj
 By 2056, we aim to be recognized for an efficient, publicly auditable governance framework for scarce shared infrastructure, integrating an incentive-compatible mechanism, verifiable computation, and behavioral evidence on truthful reporting. Progress moves from this six-team simulation to a real institutional pilot, correctable through a public, re-runnable audit log.
 
 \subsection*{Open Science Statement}
-GitHub (\url{https://github.com/dku-comsci-econ206-Autumn2026/FP05-PS2-Team-A}) contains the FCFS/VCG code, tests, and outputs, including the carbon-weight sweep (\texttt{lambda\_sweep.csv}); a self-contained Colab notebook (\url{https://colab.research.google.com/drive/14eo8a2HWUbbBtv-m-ia4xRiL4V6Iwtun}) that also holds the two-GPU-pool extension; a Hugging Face Space (\url{https://huggingface.co/spaces/dku-comsci-econ206-2026/PS2_Team_A}, commit \texttt{ad5604b}); README with run instructions. Inputs are synthetic ($d_i\in\{15,20,25\}$, $v_i\in\{3,6,9\}$; the Space allows continuous ranges), clearly labeled. Review-ready results come from commit \texttt{d93fc2e}; final results from commit \texttt{8a656a4}. Limitation: exact enumeration does not scale past small team counts.
+GitHub (\url{https://github.com/dku-comsci-econ206-Autumn2026/FP05-PS2-Team-A}) contains the FCFS/VCG code, tests, and outputs, including the carbon-weight sweep (\texttt{lambda\_sweep.csv}); a self-contained Colab notebook (\url{https://colab.research.google.com/drive/14eo8a2HWUbbBtv-m-ia4xRiL4V6Iwtun}) that also holds the two-GPU-pool extension; a Hugging Face Space (\url{https://huggingface.co/spaces/dku-comsci-econ206-2026/PS2_Team_A}, commit \texttt{ad5604b}); README with run instructions. Inputs are synthetic ($d_i\in\{15,20,25\}$, $v_i\in\{3,6,9\}$; the Space allows wider ranges), clearly labeled. Review-ready results come from commit \texttt{d93fc2e}; final results from commit \texttt{8a656a4}. Limitation: exact enumeration does not scale past small team counts.
 
 \subsection*{Statement of Contribution to the UN's SDGs}
 Connects to SDG~13 (carbon priced into allocation) and SDG~9 (auditable infrastructure rule). Audience: compute administrators and research teams; minimal access needs. Indicator: emissions per unit of allocated value. Possible unintended effect: urgency inflation beyond the report's resolution, or $\lambda$ disadvantaging compute-heavy research. Intended mechanism only---no adoption has occurred.

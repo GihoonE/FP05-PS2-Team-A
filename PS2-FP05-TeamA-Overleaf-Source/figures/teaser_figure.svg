@@ -91,7 +91,7 @@
 <text x="435.0" y="464.9" font-size="14" fill="#2F4B7C" text-anchor="middle" xml:space="preserve"><tspan >1.2</tspan></text>
 <rect x="32.0" y="510.0" width="446.0" height="196.0" rx="6" fill="#F4F5F7" stroke="none" stroke-width="1"/>
 <text x="46.0" y="534.9" font-size="14" fill="#2F4B7C" text-anchor="start" xml:space="preserve"><tspan font-weight="bold">Information structure</tspan></text>
-<text x="46.0" y="567.5" font-size="13" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan >•  Private: project value </tspan><tspan font-style="italic">r</tspan><tspan dy="3.9" font-style="italic" font-size="9.4">i</tspan><tspan dy="-3.9"> (may be misreported)</tspan></text>
+<text x="46.0" y="567.5" font-size="13" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan >•  Private: project value </tspan><tspan font-style="italic">v</tspan><tspan dy="3.9" font-style="italic" font-size="9.4">i</tspan><tspan dy="-3.9"> (the report </tspan><tspan font-style="italic">r</tspan><tspan dy="3.9" font-style="italic" font-size="9.4">i</tspan><tspan dy="-3.9"> may differ)</tspan></text>
 <text x="46.0" y="603.5" font-size="13" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan >•  Observable: demand </tspan><tspan font-style="italic">d</tspan><tspan dy="3.9" font-style="italic" font-size="9.4">i</tspan><tspan dy="-3.9"> and estimated emissions </tspan><tspan font-style="italic">e</tspan><tspan dy="3.9" font-style="italic" font-size="9.4">i</tspan></text>
 <text x="46.0" y="639.5" font-size="13" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan >•  Carbon weight λ = 0.5; capacity </tspan><tspan font-style="italic">K</tspan><tspan > = 100 GPU-hours</tspan></text>
 <text x="46.0" y="675.5" font-size="13" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan >•  Total demand = 120 GPU-hours &gt; </tspan><tspan font-style="italic">K</tspan><tspan > (contested)</tspan></text>
@@ -191,7 +191,7 @@
 <text x="1220.0" y="379.6" font-size="13" fill="#1F2937" text-anchor="end" xml:space="preserve"><tspan font-weight="bold">96 credits</tspan></text>
 <rect x="1248.0" y="204.0" width="220.0" height="190.0" rx="6" fill="#F4F5F7" stroke="none" stroke-width="1"/>
 <text x="1262.0" y="228.9" font-size="14" fill="#2F4B7C" text-anchor="start" xml:space="preserve"><tspan font-weight="bold">Outcomes (selected set)</tspan></text>
-<text x="1260.0" y="257.2" font-size="12" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan >Total value Σ</tspan><tspan font-style="italic">r</tspan><tspan dy="3.6" font-style="italic" font-size="8.6">i</tspan></text>
+<text x="1260.0" y="257.2" font-size="12" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan >Total value Σ</tspan><tspan font-style="italic">v</tspan><tspan dy="3.6" font-style="italic" font-size="8.6">i</tspan></text>
 <text x="1456.0" y="257.9" font-size="14" fill="#2F4B7C" text-anchor="end" xml:space="preserve"><tspan font-weight="bold">30</tspan></text>
 <text x="1260.0" y="295.2" font-size="12" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan >Carbon-adjusted score</tspan></text>
 <text x="1456.0" y="295.9" font-size="14" fill="#2F4B7C" text-anchor="end" xml:space="preserve"><tspan font-weight="bold">19.2</tspan></text>
