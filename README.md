@@ -1,7 +1,7 @@
 # Transparent GPU-Hour Allocation.
-
 [![Hugging Face Space](https://img.shields.io/badge/Hugging%20Face-Live%20Space-FFD21E?logo=huggingface&logoColor=black)](https://huggingface.co/spaces/dku-comsci-econ206-2026/PS2_Team_A)
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/14eo8a2HWUbbBtv-m-ia4xRiL4V6Iwtun)
+[![Poster](colab/figures/PS2-FP05-TeamA-A0-Poster.png)](colab/figures/PS2-FP05-TeamA-A0-Poster.pdf)
 
 **COMPSCI/ECON 206, Team A (FP5)**
 *Mustafa Ayub Khan · Temur Akhtamjonov · Gihun Lee*
