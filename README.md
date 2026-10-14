@@ -8,7 +8,7 @@
 
 > **Research question.** How should an organization allocate **100 shared GPU-hours** when project teams have private project values but observable GPU requests and estimated emissions, and can a published, carbon-aware allocation rule do better than first come, first served without inviting misreporting?
 
-![Figure 1: demand exceeds capacity; FCFS vs. carbon-aware VCG; outcomes over all 720 FCFS orders; truthful reporting check](colab/figures/teaser.png)
+![Figure 1: demand exceeds capacity; FCFS vs. carbon-aware VCG; outcomes over all 720 FCFS orders; truthful reporting check](colab/figures/teaser_figure.png)
 
 We compare two rules on the same six teams:
 
