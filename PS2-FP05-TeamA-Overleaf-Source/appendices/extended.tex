@@ -1,0 +1,186 @@
+\section{Extended argument: full Sections 1--5 of version 2}\label{app:extended}
+The two-page main text above is a compression of the text below, which is kept unchanged except for the final-week additions already marked in Appendix~D. Section numbers cited in the earlier records (the v2 contribution statements in the Author Notes and Appendices~C--F) refer to the subsections here: G.1 (questions and gap), G.2 (incentives and strategic model, including the credit design), G.3 (computation and auction comparison), G.4 (behavior), and G.5 (impact, roadmap, and 2056 statement). Figures~\ref{fig:impact} and~\ref{fig:roadmap} are the full practical-impact and roadmap diagrams.
+
+\subsection{Three connected research questions and verified gap}
+
+\noindent
+Organizations increasingly face scarce GPU capacity as AI workloads grow. First-come-first-served allocation ignores project value and urgency, potentially misallocating scarce compute and leaving carbon costs unaccounted for.
+
+\vspace{3pt}
+
+\noindent
+The closest work is Zachariadis et al.'s FAIR-Compute report~\cite{fair_compute2026}. Its method is a trace-driven simulation: it replays a public academic workload (Purdue Anvil, about 20.9 million jobs) under FIFO, Slurm-style priority, a tuned multi-objective priority, and an offline optimization benchmark. Its evidence is that online, value-blind rules recover only about 65\% of the available scientific value (1552--1612 of 2388 units; their Section~5.4), so roughly a third is lost. It also marks the two gaps we address: it does not quantify carbon (Section~3.6), and it warns that self-declared value will be exaggerated (Section~4.2) while leaving mechanisms under which truthful reporting is optimal to future work (Section~7). We build that missing piece. We trade their trace-level scale for a six-team instance that is solved exactly, so the allocation, the payments, and the truthfulness claim can each be re-checked by a reader. Two further papers bound the contribution. Zhang et al.~\cite{zhang2015iaas} design truthful online auctions for cloud virtual machines that subtract server operating costs from welfare and prove competitive ratios; we take their structure (a truthful price with a cost term in the objective) but replace the provider's server cost with a carbon cost, money with budgeted credits, and online approximation with an exact offline solution. Radovanovi\'c et al.~\cite{radovanovic2021carbon} shift Google's flexible workloads to low-carbon hours using carbon-intensity forecasts and report operational data; their rule has no prices or reports, so it does not face misreporting, whereas ours prices carbon inside a strategic allocation but treats carbon intensity as a fixed parameter. These three papers were recommended by our duet partners (Appendix~D).
+
+\vspace{3pt}
+
+\noindent
+\textbf{Q1---Economics:} How should an institution allocate scarce GPU-hours to maximize project value net of carbon cost, when teams privately know their own value and can misreport it?\par
+\textbf{Q2---Computation:} Can an exactly-solvable multi-team VCG mechanism allocate more efficiently than first-come-first-served, while staying auditable?\par
+\textbf{Q3---Behavior:} Do participants report values close to the truthful benchmark, or does behavior deviate---and do their predictions and reflections show understanding of the rule?
+
+\vspace{3pt}
+
+\noindent
+Together: can a transparent, carbon-aware rule replace arrival order, and does its advantage survive behavioral and computational limits? Figure~\ref{fig:teaser} states the three questions in its top row and traces the model (Q1) and its exact computation (Q2) below them; the behavioral test (Q3) is described in Section 4.
+
+\subsection{Answer to Q1: incentives and strategic model}
+
+\noindent
+\textbf{Hypothesis.} An incentive-compatible, carbon-aware mechanism increases realized value and reduces emissions per unit of value, without misreporting.
+
+\vspace{3pt}
+
+\noindent
+\textbf{Model.} Six teams $i\in\{A,\dots,F\}$ compete for $K=100$ GPU-hours. Each privately knows value $v_i \in \{3,6,9\}$; demand $d_i$ is observable, emissions $e_i=0.24d_i$ kg CO$_2$e, carbon weight $\lambda=0.5$ (stated parameters, not empirical estimates). Teams simultaneously submit one report $r_i$ (static, incomplete information).
+
+\vspace{3pt}
+
+\noindent
+\textbf{Allocation and payment.} Score $s_i=r_i-\lambda e_i$; select feasible $S^*$ maximizing $\sum_{i\in S}s_i$ s.t. $\sum_{i\in S}d_i\le K$ (demand enters only as the constraint). Each winner pays the Clarke--Groves externality $p_i = W_{-i}^* - \sum_{j\in S^*\setminus\{i\}}s_j$~\cite{clarke1971,groves1973} (Appendix~A); utility is $u_i=v_i-\lambda e_i-p_i$ if selected, else 0.
+
+\vspace{3pt}
+
+\noindent
+\textbf{Intuition.} The payment $p_i$ is the score the other teams lose because $i$ is selected, and it does not depend on $r_i$. Substituting it gives $u_i = (\text{true total score of } S^*) - W_{-i}^*$; the second term is fixed, so a team can raise its utility only by letting the rule pick the truly best group, which is what a truthful report does. A report therefore matters only through whether it crosses the team's selection boundary. Team C ($v_C=3$) is selected once $r_C\ge 4.2$, and every report above that boundary pays the same 2.4 and yields $u_C=-1.2$: overreporting more never costs more, it only buys a seat that is worth less than its price (Appendix~F.1).
+
+\vspace{3pt}
+
+\noindent
+\textbf{Credit design (final).} Payments are made in priority credits, so the price must cost the team something. Three conditions make it so. \textbf{C1:} a selected team pays its own carbon charge $\lambda e_i$ in credits, so $u_i$ is what it actually gives up (without C1 the best report becomes $r_i=v_i+\lambda e_i$). \textbf{C2:} each team receives a fixed budget of 100 credits per allocation round at 10 credits per score unit, with no top-ups; spent credits are retired, not returned. \textbf{C3:} the budget never binds, so every team can pay any price its report can produce. At $\lambda=0.5$ a winner spends 48--54 credits; the largest spend over every $\lambda\in\{0,\dots,1\}$ and every report in $[0,10]$ is 60 credits (Appendix~A.2).
+
+\vspace{3pt}
+
+\noindent
+\textbf{Solution concept.} Under C1--C3, truthful reporting $r_i=v_i$ is dominant---stronger than Nash/Bayesian Nash equilibrium~\cite{nash1950,harsanyi1968}; verified numerically over $[0,10]$ for every team and for every carbon weight $\lambda\in\{0,0.1,\dots,1\}$ (Appendix~A.2). A reduced $2\times2$ payoff matrix for Teams C and E is in Appendix~A.1 (Table~\ref{tab:matrix}).
+
+\vspace{3pt}
+
+\noindent
+\textbf{Three lenses.} Game theory yields the dominant-strategy prediction. Social choice frames the objective as value net of carbon under capacity and surfaces two trade-offs: efficiency against access (VCG serves 4 teams against an FCFS mean of 4.93), and truthfulness against budget balance (the 96 credits go to the organization rather than back to teams; returning them would in general break truthfulness~\cite{greenlaffont1977}, so they are the price of a dominant strategy). Mechanism design specifies the report space, the rules, and the verified tests (Appendix~C).
+
+\subsection{Answer to Q2: computation, auction comparison, and artifacts}
+
+\noindent
+\textbf{Inputs.} Six teams (A--F): demands $(25,20,15,25,20,15)$, values $(9,6,3,9,6,3)$. FCFS is evaluated over all 720 arrival orders; VCG enumerates all 64 feasible subsets and re-solves per winner for payments (Appendix~A.1--A.2).
+
+\textbf{Result.} VCG selects $\{A,B,D,E\}$ (score 19.2)---no FCFS order of 720 exceeds it (range 15.6–19.2; mean 16.96). Emissions per value fall from 0.81--0.84 to 0.72 kg CO$_2$e. One verified synthetic instance, not general evidence (Appendix~A, GitHub).
+
+\vspace{3pt}
+
+\noindent
+\textbf{Parameter change.} Sweeping $\lambda$ from 0 to 1 in steps of 0.1 changes payoffs but not strategy. The selected group is $\{A,B,D,E\}$ for every $\lambda\in[0.1,1]$. The payment per winner falls from 5.28 ($\lambda=0.1$) to 2.4 ($\lambda=0.5$) and to 0 (from $\lambda=0.9$), because the low-value teams stop competing for a seat; the utility of A and D is 3.12, 3.6, and 3.0 at $\lambda=0.1, 0.5, 1$. Truthful reporting is optimal at all eleven values. $\lambda$ is therefore a policy weight on carbon, not an incentive parameter, and it cannot be chosen by maximizing project value, since on value alone $\lambda=0$ always wins. A second change splits capacity into two GPU types (H100, 50 h at 0.24 kg; A100, 50 h at 0.14 kg): the same four teams win, the two largest jobs move to the cleaner pool, emissions fall from 21.6 to 16.6 kg, and truthful reporting stays optimal (Appendix~A.2). This is the placement effect that carbon-aware schedulers obtain by shifting load~\cite{radovanovic2021carbon}, here produced by the allocation rule itself, with fixed rather than forecast carbon rates.
+
+\vspace{3pt}
+
+\noindent
+\textbf{Analogy boundary.} The auction analogy holds only in part. Payments are non-transferable priority credits rather than money, unlike cloud auctions that charge users directly~\cite{zhang2015iaas}; the fixed budget (C2) gives them a cost within a round, and the code checks that the budget never binds (C3), but whether credits keep their value across repeated rounds is untested. True values are never observed: allocation and payment use reports only. And unlike a single-item auction, several teams win under a capacity (knapsack) constraint that is solved by exact search over 64 groups; only with one slot and $\lambda=0$ does the rule reduce to a Vickrey second-price auction~\cite{vickrey1961}, a case our code reproduces (the winner pays the second-highest value).
+
+\vspace{3pt}
+
+\noindent
+\textbf{Artifacts.} GitHub: \GitHubLink{} (commit \texttt{8a656a4}). Notebook: \NotebookLink. Hugging Face: \HuggingFaceLink{} (Space commit \texttt{ad5604b}). A0 poster: \texttt{PS2-FP05-TeamA-A0-Poster.pdf}.
+
+\subsection{Answer to Q3: behavior and interdisciplinary integration}
+
+\noindent
+\textbf{Rational benchmark.} Section~2 establishes $r_i=v_i$ as dominant under VCG; FCFS has no reporting decision at all.
+
+\vspace{3pt}
+
+\noindent
+\textbf{Behavioral mechanism and competing explanation.} Laboratory second-price auctions show persistent overbidding even though truthful bidding is dominant~\cite{kagel1987}. Two explanations predict the same overreport in our setting. (i)~\emph{Comprehension:} a sealed-bid VCG rule is not obviously strategy-proof, so players may not see that the truth is optimal~\cite{li2017}. (ii)~\emph{Preference:} players understand the rule but value winning itself~\cite{cooperfang2008}.
+
+\vspace{3pt}
+
+\noindent
+\textbf{Computed consequences of each behavior.} The model shows what each deviation would cost; these rows are computed, not observed (rivals truthful, $\lambda=0.5$).
+
+{\footnotesize
+\begin{tabularx}{\columnwidth}{@{}p{2.25cm}p{1.45cm}Y@{}}\toprule
+\textbf{Behavior} & \textbf{Own utility} & \textbf{Effect on other teams}\\\midrule
+Truthful (all) & A,D 3.6; B,E 1.2; C,F 0 & baseline\\
+A overreports, $9\to10$ & 3.6 (same) & none: A already holds a seat and its price is unchanged\\
+C overreports, $3\to4.5$ & $0\to-1.2$ & E loses its seat; B falls to 0; A, D fall to 2.4\\
+B underreports, $6\to4$ & $1.2\to0$ & B loses its seat; C and F enter\\\bottomrule
+\end{tabularx}}
+
+\vspace{3pt}
+
+\noindent
+A deviation in either direction never helps the deviating team, but an overreport that crosses the boundary also harms others: the rule guarantees that the liar does not gain, not that bystanders are protected.
+
+\vspace{3pt}
+
+\noindent
+\textbf{Observed evidence (exploratory).} We recorded $n=5$ completed plays of the Space (\texttt{hf-space/plays.csv}), played by the three authors on October~3, 2026. Each player held a private value, chose a request and a report, and predicted the outcome before seeing it; the five rivals were simulated and truthful, and stakes were hypothetical.
+
+{\footnotesize
+\begin{tabularx}{\columnwidth}{@{}Ycc@{}}\toprule
+\textbf{Measure} & \textbf{Benchmark} & \textbf{Observed}\\\midrule
+Truthful reports ($r_i=v_i$) & 5/5 & 2/5\\
+Mean $|r_i-v_i|$ & 0 & 1.8\\
+Overreports / underreports & 0 / 0 & 3 / 0\\
+Selection predicted correctly & --- & 3/5\\
+Overreport with a wrong prediction & 0 & 1\\
+Overreport with a correct prediction & 0 & 2\\
+Plays in which a misreport raised utility & 0 & 0\\\bottomrule
+\end{tabularx}}
+
+\vspace{3pt}
+
+\noindent
+\emph{Agreement.} The payoff prediction held in every play: no overreport raised the player's utility. Two overreports left utility unchanged, and one bought a seat that cost 36 credits and was worth nothing net of carbon ($u=-3.6$ against 0 for the truth). \emph{Gap.} The behavioral prediction did not hold: three of five players overreported (by 4, 4, and 1), although the report field starts at the true value. Both wrong predictions were pessimistic (``left out'' when the team was selected). \emph{Consequence.} We retain the dominant-strategy result as a statement about payoffs and qualify the assumption that players see it: truthful reporting was optimal but not typical. The written reflections were left blank in all five plays. Asked afterwards, the players gave two reasons for overreporting: wanting to be selected, and misunderstanding the rule. These match explanations~(ii) and~(i), but they are recollections given after the result was known and were not recorded per play, so we do not assign them to individual plays. One further observation is consistent with explanation~(i): a symposium reviewer who had read the rule asked whether truthful reporting is optimal with and without the carbon charge (Appendix~D). These are five self-plays by the authors, who know the rule, against simulated rivals; they are exploratory and support no population claim. These observations motivate a larger classroom sample with written reflections, but they do not predict how often other participants will misreport.
+
+\vspace{3pt}
+
+\noindent
+\textbf{Interaction.} Users play one team through both FCFS and VCG stages, predicting their own selection before seeing the result, then inspect the ranking, payments, and utility (full mechanics in Appendix~F.1). All evidence is exploratory, with participant count and conditions reported.
+
+\vspace{3pt}
+
+\noindent
+\textbf{Discriminating observation.} The prediction step separates the two explanations. An overreport with a \emph{wrong} selection prediction points to comprehension~(i) and would lead us to revise the interface (show the what-if curve before the report). An overreport with a \emph{correct} prediction and a reflection about wanting to win points to preference~(ii) and would lead us to revise the model (add a value of winning to $u_i$). Neither supports a causal claim. The first five plays contain one case of the first kind and two overreports with a correct prediction but no written reflection, so the next step is the interface revision, which also requires the reflection before the result line can be copied (planned).
+
+\subsection{Advanced development, real-world impact, and roadmap}
+
+\noindent
+This proposal builds on two Nobel-recognized foundations: Vickrey's theory of incentives under asymmetric information~\cite{vickrey1961,nobel1996} and Hurwicz--Maskin--Myerson's mechanism design theory~\cite{nobel2007}---agents can be motivated to reveal the truth without verifying private information. The model is specified enough to support a transparent pilot design, but its parameters remain classroom assumptions. Integrating incentive-compatible allocation, an explicit carbon objective, and exploratory behavioral evidence addresses the two gaps left by Section~1's closest prior work.
+
+\vspace{3pt}
+
+\noindent
+The concrete case is a shared university GPU cluster. Teams benefit from allocation reflecting true value; administrators gain an auditable record; the public bears the carbon cost regardless of who benefits. Honest reporting is incentivized, but truthfulness relative to a team's actual beliefs is not independently verifiable. The carbon weight $\lambda$ is the institution's choice, for example an internal carbon price converted into value units; our sweep shows the allocation is stable for $\lambda\in[0.1,1]$, while a weight that is too heavy stops research (only A and D are served above $\lambda=1.25$, and no team above $\lambda=1.5$). Academic adoption would accept a transparent pilot; industry would demand robustness at hundreds of teams; public institutions would require an independently re-runnable audit. Next test: a pilot comparing self-reported value against ex-post outcomes at a scale where exact solving is no longer tractable. Planned voting bridge: a variant in which teams rank the projects and the rule aggregates the rankings (plurality against Borda), to compare manipulation under voting with misreporting under VCG; this is planned work, not a result.
+
+\vspace{3pt}
+
+\subsubsection*{Intellectual Merits}
+Figure~\ref{fig:teaser} locates the contribution. Inherited (blue): truthful externality prices~\cite{vickrey1961,clarke1971,groves1973}, the value-blind loss and open gaps in FAIR-Compute~\cite{fair_compute2026}, truthful cloud auctions with a cost term~\cite{zhang2015iaas}, and carbon-aware scheduling~\cite{radovanovic2021carbon}. New (orange): carbon priced into each team's score, the credit conditions C1--C3 under which the price is a real cost, and an exact comparison with every FCFS order. Evidence (green): 8 unit tests and 10 notebook checks on one synthetic instance, and five exploratory self-plays. The claim is bounded accordingly: truthful reporting is dominant in one round under C1--C3; we do not claim it for repeated rounds or for measured emissions.
+
+\subsubsection*{Practical Impacts}
+Figure~\ref{fig:impact} places the official SDG icons and targets on the mechanism~\cite{un_sdg}. \textbf{Target 9.5} (research capability): GPU-hours go to the most valuable research net of carbon; carbon-adjusted value rises from an FCFS mean of 16.96 to 19.2. \textbf{Target 9.4} (resource-use efficiency): emissions per unit of value fall from 0.81--0.84 to 0.72 kg CO$_2$e, and to 0.55 with two GPU pools. Both are \emph{demonstrated only in simulation}. \textbf{Target 13.3} (institutional capacity on mitigation): an institution that publishes $\lambda$, a fixed credit supply, and a re-runnable log builds that capacity; this is \emph{intended}, since no institution has adopted the rule. Stakeholders are research teams, cluster administrators, the institution, and the public that bears the carbon cost. The main risk is internal to the targets: a heavy $\lambda$ serves 9.4 at the expense of 9.5 (above $\lambda=1.25$ only two teams are served), so the safeguard is to publish $\lambda$ before each round and keep it below that bound. Repeated exclusion of the same teams and credit inflation are the other two risks, met by history-based credits (planned) and the fixed supply C2.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/impact_diagram.pdf}
+\caption{Practical-impact diagram with official SDG icons and target codes. Solid green cards are demonstrated only in simulation on one synthetic instance; the dashed card is intended and requires institutional adoption. Each risk is paired with its safeguard.}
+\label{fig:impact}
+\end{figure*}
+
+\subsubsection*{Future Research Roadmap}
+Figure~\ref{fig:roadmap} starts from the limitation that remains after this revision: truthful reporting is verified for one round of one synthetic instance with fixed carbon rates. The \textbf{economics} study (Mustafa Ayub Khan) tests whether fixed-budget credits keep the truth optimal over repeated rounds and how $\lambda$ and the credit supply should be announced; the 2026 prize for microeconomic foundations of stabilisation policy, including the role of announced future policy~\cite{nobel2026}, motivates the second question. The \textbf{computer-science} study (Temur Akhtamjonov, Gihun Lee) adds several GPU types with measured power and grid intensity~\cite{radovanovic2021carbon}, replaces exact search with an integer program checked against it, and tests history-based credits so that the same teams are not excluded every round~\cite{karma2023}. The \textbf{behavioral} study (Gihun Lee) asks players to write a reason before seeing the result, to separate misunderstanding~\cite{li2017} from a preference for winning~\cite{cooperfang2008}. Our duet partners FP8, who offered their simulation benchmark, are a possible collaborator for the first two studies. The earlier milestone table is kept in Appendix~E (Table~\ref{tab:trajectory}).
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/roadmap_diagram.pdf}
+\caption{Future research roadmap. One unresolved limitation feeds an economics, a computer-science, and a behavioral study, each with a question, method and data, possible collaborator, progress criterion, milestone, and owner.}
+\label{fig:roadmap}
+\end{figure*}
+
+\vspace{3pt}
+
+\noindent
+\noindent\textbf{Expected 2056 Nobel Prize and Turing Award contribution statement.}
+By 2056, we aim to be recognized for an efficient, publicly auditable governance framework for scarce shared infrastructure, integrating an incentive-compatible mechanism, verifiable computation, and behavioral evidence on truthful reporting. \textbf{Revised after the 2026 prize:} the framework must also include a credible institutional rule for the credit supply and for announcing $\lambda$, because the price that makes truth optimal is only as real as teams expect the credits to be (Appendix~D.6). Progress moves from this six-team simulation to a real institutional pilot, correctable through a public, re-runnable audit log.
+
+\subsubsection*{Open Science Statement}
+GitHub (\url{https://github.com/dku-comsci-econ206-Autumn2026/FP05-PS2-Team-A}) contains the FCFS/VCG code, tests, and outputs, including the carbon-weight sweep (\texttt{lambda\_sweep.csv}); a self-contained Colab notebook (\url{https://colab.research.google.com/drive/14eo8a2HWUbbBtv-m-ia4xRiL4V6Iwtun}) that also holds the two-GPU-pool extension; a Hugging Face Space (\url{https://huggingface.co/spaces/dku-comsci-econ206-2026/PS2_Team_A}, commit \texttt{ad5604b}); README with run instructions. Inputs are synthetic ($d_i\in\{15,20,25\}$, $v_i\in\{3,6,9\}$; the Space allows wider ranges), clearly labeled. Review-ready results come from commit \texttt{d93fc2e}; final results from commit \texttt{8a656a4}. Limitation: exact enumeration does not scale past small team counts.

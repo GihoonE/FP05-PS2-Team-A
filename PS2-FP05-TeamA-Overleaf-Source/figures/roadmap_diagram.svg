@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="740" viewBox="0 0 1500 740" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="ah" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#6B7280"/></marker></defs>
+<rect width="1500" height="740" fill="#FFFFFF"/>
+<text x="20" y="34" font-size="20" fill="#1F2937" text-anchor="start" font-weight="bold" xml:space="preserve">Future research roadmap: from one verified round to repeated, measured, human allocation</text>
+<text x="20" y="58" font-size="13" fill="#6B7280" text-anchor="start" xml:space="preserve">Each study starts from the same unresolved limitation and has an owner, a test that counts as progress, and a date.</text>
+<rect x="20" y="84" width="300" height="466" rx="10" fill="#FBE9DF" stroke="#C2410C" stroke-width="1.4"/>
+<text x="36" y="112" font-size="12" fill="#C2410C" text-anchor="start" font-weight="bold" xml:space="preserve">UNRESOLVED LIMITATION</text>
+<text x="36" y="140.0" font-size="15" fill="#1F2937" text-anchor="start" font-weight="bold" xml:space="preserve">Truthful reporting is verified for</text>
+<text x="36" y="159.8" font-size="15" fill="#1F2937" text-anchor="start" font-weight="bold" xml:space="preserve">one allocation round of one</text>
+<text x="36" y="179.6" font-size="15" fill="#1F2937" text-anchor="start" font-weight="bold" xml:space="preserve">synthetic instance, with fixed</text>
+<text x="36" y="199.4" font-size="15" fill="#1F2937" text-anchor="start" font-weight="bold" xml:space="preserve">carbon rates.</text>
+<text x="36" y="237.2" font-size="12.5" fill="#1F2937" text-anchor="start" xml:space="preserve">• Across repeated rounds, credits may</text>
+<text x="36" y="253.7" font-size="12.5" fill="#1F2937" text-anchor="start" xml:space="preserve">lose their cost (C2 untested over time).</text>
+<text x="36" y="288.2" font-size="12.5" fill="#1F2937" text-anchor="start" xml:space="preserve">• The same low-value teams can be</text>
+<text x="36" y="304.7" font-size="12.5" fill="#1F2937" text-anchor="start" xml:space="preserve">excluded every round.</text>
+<text x="36" y="339.2" font-size="12.5" fill="#1F2937" text-anchor="start" xml:space="preserve">• Carbon rates are assumed, not measured,</text>
+<text x="36" y="355.7" font-size="12.5" fill="#1F2937" text-anchor="start" xml:space="preserve">and exact search stops scaling.</text>
+<text x="36" y="390.2" font-size="12.5" fill="#1F2937" text-anchor="start" xml:space="preserve">• Five author self-plays cannot separate</text>
+<text x="36" y="406.7" font-size="12.5" fill="#1F2937" text-anchor="start" xml:space="preserve">misunderstanding from wanting to win.</text>
+<text x="36" y="536" font-size="11" fill="#6B7280" text-anchor="start" xml:space="preserve">Sources: Section 5, Appendices A and D</text>
+<line x1="322" y1="317" x2="364" y2="157" stroke="#6B7280" stroke-width="1.6" marker-end="url(#ah)"/>
+<rect x="370" y="84" width="1110" height="146" rx="10" fill="#FFFFFF" stroke="#2F4B7C" stroke-width="1.4"/>
+<rect x="384" y="96" width="84.96" height="21" rx="10.5" fill="#E6EBF3" stroke="#2F4B7C" stroke-width="1"/>
+<text x="426.48" y="110" font-size="12" fill="#2F4B7C" text-anchor="middle" font-weight="bold" xml:space="preserve">ECONOMICS</text>
+<text x="1466" y="111" font-size="12" fill="#6B7280" text-anchor="end" font-weight="bold" xml:space="preserve">Owner: Mustafa Ayub Khan</text>
+<text x="384" y="142" font-size="11.5" fill="#2F4B7C" text-anchor="start" font-weight="bold" xml:space="preserve">Question</text>
+<text x="384" y="162.0" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">Do fixed-budget credits keep the</text>
+<text x="384" y="178.10399999999998" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">truth optimal over many rounds, and</text>
+<text x="384" y="194.208" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">how should λ and the credit supply be</text>
+<text x="384" y="210.312" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">announced?</text>
+<text x="634" y="142" font-size="11.5" fill="#2F4B7C" text-anchor="start" font-weight="bold" xml:space="preserve">Method and data</text>
+<text x="634" y="162.0" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">Multi-round simulation of C2 budgets</text>
+<text x="634" y="178.10399999999998" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">with carry-over; a pre-announced λ path</text>
+<text x="634" y="194.208" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">in the spirit of forward guidance [Hall</text>
+<text x="634" y="210.312" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">&amp; Woodford 2026].</text>
+<text x="904" y="142" font-size="11.5" fill="#2F4B7C" text-anchor="start" font-weight="bold" xml:space="preserve">Possible collaborator</text>
+<text x="904" y="162.0" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">DKU research-computing</text>
+<text x="904" y="178.10399999999998" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">office; FP8 (shared risk-</text>
+<text x="904" y="194.208" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">reserve benchmark)</text>
+<text x="1104" y="142" font-size="11.5" fill="#2F4B7C" text-anchor="start" font-weight="bold" xml:space="preserve">Progress criterion</text>
+<text x="1104" y="162.0" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">No profitable misreport over 10</text>
+<text x="1104" y="178.10399999999998" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">rounds; budget never binds</text>
+<text x="1344" y="142" font-size="11.5" fill="#2F4B7C" text-anchor="start" font-weight="bold" xml:space="preserve">Milestone</text>
+<text x="1344" y="162.0" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">Dec 2026</text>
+<line x1="322" y1="317" x2="364" y2="317" stroke="#6B7280" stroke-width="1.6" marker-end="url(#ah)"/>
+<rect x="370" y="244" width="1110" height="146" rx="10" fill="#FFFFFF" stroke="#15803D" stroke-width="1.4"/>
+<rect x="384" y="256" width="137.04" height="21" rx="10.5" fill="#E3F2E7" stroke="#15803D" stroke-width="1"/>
+<text x="452.52" y="270" font-size="12" fill="#15803D" text-anchor="middle" font-weight="bold" xml:space="preserve">COMPUTER SCIENCE</text>
+<text x="1466" y="271" font-size="12" fill="#6B7280" text-anchor="end" font-weight="bold" xml:space="preserve">Owner: Temur Akhtamjonov, Gihun Lee</text>
+<text x="384" y="302" font-size="11.5" fill="#15803D" text-anchor="start" font-weight="bold" xml:space="preserve">Question</text>
+<text x="384" y="322.0" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">Does the rule scale to many GPU types</text>
+<text x="384" y="338.104" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">with measured emissions, without</text>
+<text x="384" y="354.20799999999997" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">excluding the same teams every round?</text>
+<text x="634" y="302" font-size="11.5" fill="#15803D" text-anchor="start" font-weight="bold" xml:space="preserve">Method and data</text>
+<text x="634" y="322.0" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">Integer program checked against exact</text>
+<text x="634" y="338.104" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">search; measured power × grid intensity</text>
+<text x="634" y="354.20799999999997" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">[Radovanović et al. 2021]; history-based</text>
+<text x="634" y="370.312" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">credits [Karma, OSDI 2023].</text>
+<text x="904" y="302" font-size="11.5" fill="#15803D" text-anchor="start" font-weight="bold" xml:space="preserve">Possible collaborator</text>
+<text x="904" y="322.0" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">DKU HPC administrators; FP8</text>
+<text x="1104" y="302" font-size="11.5" fill="#15803D" text-anchor="start" font-weight="bold" xml:space="preserve">Progress criterion</text>
+<text x="1104" y="322.0" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">Matches exact search up to 12 teams;</text>
+<text x="1104" y="338.104" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">100 teams solved; no team excluded &gt;</text>
+<text x="1104" y="354.20799999999997" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">3 rounds; DSIC check passes</text>
+<text x="1344" y="302" font-size="11.5" fill="#15803D" text-anchor="start" font-weight="bold" xml:space="preserve">Milestone</text>
+<text x="1344" y="322.0" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">Spring 2027</text>
+<line x1="322" y1="317" x2="364" y2="477" stroke="#6B7280" stroke-width="1.6" marker-end="url(#ah)"/>
+<rect x="370" y="404" width="1110" height="146" rx="10" fill="#FFFFFF" stroke="#6D28D9" stroke-width="1.4"/>
+<rect x="384" y="416" width="151.92" height="21" rx="10.5" fill="#EDE9FE" stroke="#6D28D9" stroke-width="1"/>
+<text x="459.96" y="430" font-size="12" fill="#6D28D9" text-anchor="middle" font-weight="bold" xml:space="preserve">BEHAVIORAL SCIENCE</text>
+<text x="1466" y="431" font-size="12" fill="#6B7280" text-anchor="end" font-weight="bold" xml:space="preserve">Owner: Gihun Lee</text>
+<text x="384" y="462" font-size="11.5" fill="#6D28D9" text-anchor="start" font-weight="bold" xml:space="preserve">Question</text>
+<text x="384" y="482.0" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">Do overreports come from</text>
+<text x="384" y="498.104" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">misunderstanding the rule or from</text>
+<text x="384" y="514.208" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">wanting to win?</text>
+<text x="634" y="462" font-size="11.5" fill="#6D28D9" text-anchor="start" font-weight="bold" xml:space="preserve">Method and data</text>
+<text x="634" y="482.0" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">Write-a-reason-before-the-result</text>
+<text x="634" y="498.104" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">protocol in the Space; classroom sample</text>
+<text x="634" y="514.208" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">of 30 or more; preregistered [Li 2017;</text>
+<text x="634" y="530.312" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">Cooper &amp; Fang 2008].</text>
+<text x="904" y="462" font-size="11.5" fill="#6D28D9" text-anchor="start" font-weight="bold" xml:space="preserve">Possible collaborator</text>
+<text x="904" y="482.0" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">COMSCI/ECON 206 class; Prof.</text>
+<text x="904" y="498.104" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">Luyao Zhang</text>
+<text x="1104" y="462" font-size="11.5" fill="#6D28D9" text-anchor="start" font-weight="bold" xml:space="preserve">Progress criterion</text>
+<text x="1104" y="482.0" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">Each overreport classified from a</text>
+<text x="1104" y="498.104" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">written reason; share of truthful</text>
+<text x="1104" y="514.208" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">reports with 95% interval</text>
+<text x="1344" y="462" font-size="11.5" fill="#6D28D9" text-anchor="start" font-weight="bold" xml:space="preserve">Milestone</text>
+<text x="1344" y="482.0" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">Next course offering,</text>
+<text x="1344" y="498.104" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">2027</text>
+<text x="20" y="600" font-size="14" fill="#2F4B7C" text-anchor="start" font-weight="bold" xml:space="preserve">Timeline</text>
+<line x1="40" y1="640" x2="1460" y2="640" stroke="#CBD0D8" stroke-width="3"/>
+<circle cx="40.0" cy="640" r="8" fill="#2F4B7C" stroke="#2F4B7C" stroke-width="2"/>
+<text x="40.0" y="670" font-size="13" fill="#1F2937" text-anchor="start" font-weight="bold" xml:space="preserve">Sept 28, 2026</text>
+<text x="40.0" y="690" font-size="12" fill="#6B7280" text-anchor="start" xml:space="preserve">PS2 symposium: one round, one instance</text>
+<circle cx="395.0" cy="640" r="8" fill="#2F4B7C" stroke="#2F4B7C" stroke-width="2"/>
+<text x="395.0" y="670" font-size="13" fill="#1F2937" text-anchor="middle" font-weight="bold" xml:space="preserve">Oct 21, 2026</text>
+<text x="395.0" y="690" font-size="12" fill="#6B7280" text-anchor="middle" xml:space="preserve">Final: credit design C1–C3 checked</text>
+<circle cx="750.0" cy="640" r="8" fill="#FFFFFF" stroke="#2F4B7C" stroke-width="2"/>
+<text x="750.0" y="670" font-size="13" fill="#1F2937" text-anchor="middle" font-weight="bold" xml:space="preserve">Dec 2026</text>
+<text x="750.0" y="690" font-size="12" fill="#6B7280" text-anchor="middle" xml:space="preserve">Multi-round credit study</text>
+<circle cx="1105.0" cy="640" r="8" fill="#FFFFFF" stroke="#2F4B7C" stroke-width="2"/>
+<text x="1105.0" y="670" font-size="13" fill="#1F2937" text-anchor="middle" font-weight="bold" xml:space="preserve">2027</text>
+<text x="1105.0" y="690" font-size="12" fill="#6B7280" text-anchor="middle" xml:space="preserve">GPU types, fairness, classroom sample</text>
+<circle cx="1460.0" cy="640" r="8" fill="#FFFFFF" stroke="#2F4B7C" stroke-width="2"/>
+<text x="1460.0" y="670" font-size="13" fill="#1F2937" text-anchor="end" font-weight="bold" xml:space="preserve">2056</text>
+<text x="1460.0" y="690" font-size="12" fill="#6B7280" text-anchor="end" xml:space="preserve">Rule adopted by an institution, audited in</text>
+<text x="1460.0" y="706" font-size="12" fill="#6B7280" text-anchor="end" xml:space="preserve">public</text>
+</svg>

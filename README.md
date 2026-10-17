@@ -1,10 +1,15 @@
 # Transparent GPU-Hour Allocation.
 [![Hugging Face Space](https://img.shields.io/badge/Hugging%20Face-Live%20Space-FFD21E?logo=huggingface&logoColor=black)](https://huggingface.co/spaces/dku-comsci-econ206-2026/PS2_Team_A)
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/14eo8a2HWUbbBtv-m-ia4xRiL4V6Iwtun)
-[![Poster](colab/figures/PS2-FP05-TeamA-A0-Poster.png)](colab/figures/PS2-FP05-TeamA-A0-Poster.pdf)
 
 **COMPSCI/ECON 206, Team A (FP5)**
 *Mustafa Ayub Khan · Temur Akhtamjonov · Gihun Lee*
+
+## Final presentation poster
+
+![Final presentation poster](poster/final-poster.png)
+
+[Download the poster PDF](poster/final-poster.pdf) · Final paper: [`PS2-FP05-TeamA.pdf`](PS2-FP05-TeamA.pdf) (two-page main text; feedback and revision record in Appendix D)
 
 > **Research question.** How should an organization allocate **100 shared GPU-hours** when project teams have private project values but observable GPU requests and estimated emissions, and can a published, carbon-aware allocation rule do better than first come, first served without inviting misreporting?
 
@@ -19,7 +24,7 @@ We compare two rules on the same six teams:
 
 | Artifact | Link | What it shows |
 |---|---|---|
-| Verified release | [`ps2-review` tag](https://github.com/GihoonE/COMPSCI206-PS2/tree/ps2-review) | The exact code, notebook, and outputs reported below |
+| Verified release | [`final-v3` tag](https://github.com/dku-comsci-econ206-Autumn2026/FP05-PS2-Team-A/tree/final-v3) | The exact code, notebook, and outputs reported below (final project, Oct 2026) |
 | Colab notebook | [Open in Colab](https://colab.research.google.com/drive/14eo8a2HWUbbBtv-m-ia4xRiL4V6Iwtun) | Self-contained model code, proof sketch, utility plots, checks, fresh-run record |
 | Hugging Face Space | [PS2_Team_A](https://huggingface.co/spaces/dku-comsci-econ206-2026/PS2_Team_A) | Play one team: FCFS, then VCG with a prediction, allocation and payment audit, a *what-if* report slider, and reflection |
 
@@ -70,7 +75,13 @@ Truthful reporting is optimal whatever the others report (DSIC), so teams need n
 - **Why the carbon term matters.** If utility were $`v_i - p_i`$, the best report would be $`r_i = v_i + \lambda e_i`$, and DSIC would fail.
 - **Special case.** With one item and $`\lambda = 0`$, the rule is the Vickrey second-price auction.
 
-DSIC needs priority credits to carry a real future opportunity cost. The code checks the rule, not that condition.
+DSIC holds under three credit conditions (final design, after the October 12–14 duet and roundtable with FP8):
+
+- **C1, own carbon charge.** A selected team pays its carbon charge $`\lambda e_i`$ in credits.
+- **C2, fixed credit budget.** Each team holds 100 credits per allocation round; no top-ups; spent credits are retired.
+- **C3, budget never binds.** Over every $`\lambda \in \lbrace 0, 0.1, \dots, 1 \rbrace`$ and every report, the largest spend (carbon charge + VCG price) is 60 credits, below the 100-credit budget. At $`\lambda = 0.5`$ winners spend 48–54 credits.
+
+The code checks C3 on this instance. Whether credits keep their value over many rounds is untested (see the roadmap in the paper).
 
 ## Parameters
 
@@ -188,16 +199,16 @@ The largest jobs move to the cleaner pool, and truthful reporting stays optimal.
 
 The model, script, and tests need only the Python standard library (Python 3.9 or newer).
 
-**Colab:** open the [shared notebook](https://colab.research.google.com/drive/14eo8a2HWUbbBtv-m-ia4xRiL4V6Iwtun) (a copy is in `colab/notebooks/01_gpu_hour_vcg_allocation.ipynb`), choose *Runtime → Run all*, and check that the last cell prints `PASS` for all nine checks. The notebook is self-contained: the full model code is inside it, so it needs no clone and no installs.
+**Colab:** open the [shared notebook](https://colab.research.google.com/drive/14eo8a2HWUbbBtv-m-ia4xRiL4V6Iwtun) (a copy is in `colab/notebooks/01_gpu_hour_vcg_allocation.ipynb`), choose *Runtime → Run all*, and check that the last cell prints `PASS` for all ten checks. The notebook is self-contained: the full model code is inside it, so it needs no clone and no installs.
 
 **Local:**
 
 ```bash
-git clone --branch ps2-review https://github.com/GihoonE/COMPSCI206-PS2.git
-cd COMPSCI206-PS2/colab
+git clone --branch final-v3 https://github.com/dku-comsci-econ206-Autumn2026/FP05-PS2-Team-A.git
+cd FP05-PS2-Team-A/colab
 python run_simulation.py                      # prints results, rewrites outputs/*.csv
 git diff --exit-code outputs/                 # expected = actual: no diff means the committed outputs were reproduced
-python -m unittest discover -s tests -v       # baseline, DSIC (fixed, every λ, 100 random games), Vickrey special case, 720-order FCFS, notebook = src
+python -m unittest discover -s tests -v       # baseline, DSIC (fixed, every λ, 100 random games), Vickrey special case, credit budget, 720-order FCFS, notebook = src
 ```
 
 `matplotlib` is needed only for the notebook's utility plots (preinstalled on Colab): `python -m pip install -r colab/requirements.txt`.
@@ -212,6 +223,10 @@ python -m unittest discover -s tests -v       # baseline, DSIC (fixed, every λ,
 | 2026-10-03 | Python 3.14.7, macOS (arm64) | `python colab/run_simulation.py` then `git diff --exit-code colab/outputs/` | earlier outputs reproduced; new `lambda_sweep.csv` written; truth optimal at all 11 values of λ |
 | 2026-10-03 | Python 3.14.7, macOS (arm64) | `cd colab && python -m unittest discover -s tests -v` | 7 tests OK |
 | 2026-10-03 | Jupyter `nbclient` in an empty folder (no repository), matplotlib | notebook fresh run | 9 / 9 checks PASS, including the λ sweep and the two-GPU-pool extension |
+| 2026-10-17 | Python 3.14.7, macOS (arm64) | `python colab/run_simulation.py` then `git diff --exit-code colab/outputs/` | all committed outputs reproduced without a diff |
+| 2026-10-17 | Python 3.14.7, macOS (arm64) | `cd colab && python -m unittest discover -s tests -v` | 8 tests OK (new: credit budget never binds) |
+| 2026-10-17 | Jupyter `nbconvert --execute`, fresh kernel, matplotlib | notebook fresh run | 10 / 10 checks PASS, including the credit budget (C3) |
+| 2026-10-17 | Node.js | `node hf-space/app.js` | Space port matches repo outputs; truth optimal on 200 random games |
 
 ## Repository structure
 
@@ -230,9 +245,10 @@ colab/                             computational artifact (Colab simulation)
 └── requirements.txt
 hf-space/                          behavioral artifact (static Hugging Face Space: index.html, app.js, style.css)
 └── plays.csv                      five self-plays by the authors, anonymous (observed, exploratory)
-PS2-FP05-TeamA-Overleaf-Source/    proposal LaTeX source (same content as the .zip)
-PS2-FP05-TeamA.pdf                 compiled proposal
-PS2-FP05-TeamA-A0-Poster.pdf/.pptx A0 poster
+poster/final-poster.pdf, .png      final A0 poster (PDF and the preview embedded above)
+PS2-FP05-TeamA-Overleaf-Source/    paper LaTeX source (same content as the .zip)
+PS2-FP05-TeamA.pdf                 compiled final paper
+PS2-FP05-TeamA-A0-Poster.pdf/.pptx editable A0 poster and its PDF
 ```
 
 ## Evidence boundary and limitations
@@ -240,8 +256,16 @@ PS2-FP05-TeamA-A0-Poster.pdf/.pptx A0 poster
 - **Computed, not observed.** Every number here comes from the formal model. The code checks the announced allocation and payment rule, but it cannot verify a team's true private value.
 - **Behavioral evidence lives in the Hugging Face Space and is exploratory.** Five completed self-plays by the three authors (October 3, 2026) are exported in `hf-space/plays.csv`: no misreport raised the player's utility, but three of five players overreported, and the written reflections are blank. The Space's rival teams are simulated and truthful. Classroom play is a small, self-selected sample with hypothetical stakes, so it is not population-level causal evidence.
 - **Assumptions.** The 0.24 kg CO₂e per GPU-hour rate and $`\lambda = 0.5`$ are announced classroom-model assumptions, not measured emissions for real workloads. Location- and time-specific emissions are out of scope; heterogeneous hardware appears only in the two-GPU-pool extension, which ignores speed differences.
-- **DSIC condition.** Truthful reporting is dominant only if priority credits have a real future opportunity cost and teams internalize the announced carbon penalty.
+- **DSIC condition.** Truthful reporting is dominant only under C1–C3: each team pays its own carbon charge, credits come from a fixed 100-credit budget with no top-ups, and the budget never binds. Value over repeated rounds is untested.
 - **Scale.** Exhaustive search (2ⁿ groups) is exact for six teams. Larger n would need an integer-programming solver.
+
+## Final project additions (v3, October 2026)
+
+- **Closest papers.** FAIR-Compute (Zachariadis et al., 2026), Zhang et al. (SIGMETRICS 2015), and Radovanović et al. (2021), recommended by our duet partners FP8 and compared in the paper (Sections 1 and 7).
+- **Practical impacts.** SDG targets 9.5 and 9.4 (demonstrated in simulation only) and 13.3 (intended; no institution has adopted the rule). Diagram: paper Figure 2.
+- **Future research roadmap.** Economics (multi-round credit value, announcing λ), computer science (GPU types with measured emissions, scalable solving, history-based credits), behavioral (reason-before-result classroom study). Diagram: paper Figure 3.
+- **Feedback and revision record.** Instructor feedback, the September 28 symposium reviews, the October 12–14 duet and roundtable, self-challenges, and the prize comparison are recorded with Keep/Revise/Investigate decisions in Appendix D of the paper.
+- **Contributions and acknowledgments.** Named contributions and full acknowledgments are in the paper's Author Notes and on the poster. If you are named and something is missing or wrong, please open an issue.
 
 ## License
 

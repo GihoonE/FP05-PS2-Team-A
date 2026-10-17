@@ -21,10 +21,11 @@
 \newcommand{\GitHubLink}{\url{https://github.com/dku-comsci-econ206-Autumn2026/FP05-PS2-Team-A}}
 \newcommand{\NotebookLink}{\url{https://colab.research.google.com/drive/14eo8a2HWUbbBtv-m-ia4xRiL4V6Iwtun}}
 \newcommand{\HuggingFaceLink}{\url{https://huggingface.co/spaces/dku-comsci-econ206-2026/PS2_Team_A}}
-\newcommand{\PosterLink}{\textit{A0 poster in progress}}
+\newcommand{\PosterLink}{\texttt{poster/final-poster.pdf}}
+\newcommand{\TestedCommit}{2045024}
 \newcommand{\coursemeta}{\noindent\textbf{Submission to:} \CourseNumber{} --- \CourseName.\\
 \textbf{Course session:} \CourseSession. \textbf{Team:} \TeamCode. \textbf{Symposium:} \SymposiumSession.\\
-\textbf{Course instructor:} \Instructor. \textbf{Assignment:} PS2 collaborative research proposal.\par\smallskip}
+\textbf{Course instructor:} \Instructor. \textbf{Assignment:} Final Project, verified research contribution and reproducible release (v3, October 21, 2026).\par\smallskip}
 \title{Transparent GPU-Hour Allocation: A Carbon-Aware VCG Mechanism for Shared Computing Resources}
 \author{Mustafa Ayub Khan}
 \affiliation{\institution{Duke Kunshan University}\city{Kunshan}\country{China}}
@@ -48,17 +49,12 @@
 \captionsetup{skip=8pt}
 \centering
 \input{figures/ps2_teaser.tex}
-\caption{
-Carbon-aware allocation of 100 shared GPU-hours across six project teams.
-The top row states the three research questions; panels 1--2 give the strategic model (Q1), panel 3 its exact computation (Q2), and the behavioral question (Q3) is tested in the Hugging Face Space.
-We compare random-order FCFS with a VCG mechanism that selects the feasible team set
-maximizing reported project value minus a published carbon penalty and charges externality
-payments.
-}
+\caption{Carbon-aware GPU-hour allocation: questions, model, exact computation, truthfulness conditions C1--C3 (orange), and merit map: inherited (blue), new (orange), evidence (green). One synthetic instance.}
 \label{fig:teaser}
 \end{teaserfigure}
 \maketitle\raggedbottom\coursemeta
 
 \input{sections/proposal}
 \input{appendices/supporting}
+\input{appendices/extended}
 \end{document}
