@@ -30,6 +30,8 @@ CAPACITY_GPU_HOURS = 100.0
 EMISSIONS_KG_CO2E_PER_GPU_HOUR = 0.24
 CARBON_PENALTY_PER_KG_CO2E = 0.5
 PRIORITY_CREDITS_PER_SCORE_UNIT = 10.0
+# C2: fixed credits per team per allocation round; no top-ups, spent credits are retired.
+ROUND_BUDGET_CREDITS = 100.0
 
 
 @dataclass(frozen=True)

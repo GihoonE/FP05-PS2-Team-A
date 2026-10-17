@@ -1,11 +1,12 @@
 // ============ Mechanism ============
-// Port of src/gpu_allocation.py (github.com/GihoonE/COMPSCI206-PS2). Keep the two in sync.
+// Port of src/gpu_allocation.py (github.com/dku-comsci-econ206-Autumn2026/FP05-PS2-Team-A). Keep the two in sync.
 // Run `node app.js` to check it against the repo's outputs/*.csv example and test truthful reporting.
 
 const CAPACITY = 100;
 const EMISSIONS_PER_GPU_HOUR = 0.24;
 const CARBON_PENALTY = 0.5;
 const CREDITS_PER_SCORE_UNIT = 10;
+const ROUND_BUDGET_CREDITS = 100;   // C2: fixed credits per team per round, no top-ups
 
 const round = (x, n = 2) => Math.round(x * 10 ** n) / 10 ** n;
 const emissions = t => EMISSIONS_PER_GPU_HOUR * t.d;
@@ -77,7 +78,7 @@ function metrics(teams, outcome) {
   };
 }
 
-const Mechanism = { CAPACITY, EMISSIONS_PER_GPU_HOUR, CARBON_PENALTY, CREDITS_PER_SCORE_UNIT,
+const Mechanism = { CAPACITY, EMISSIONS_PER_GPU_HOUR, CARBON_PENALTY, CREDITS_PER_SCORE_UNIT, ROUND_BUDGET_CREDITS,
   round, emissions, carbonCost, score, demand, totalScore, rankedGroups, vcg, fcfs, utility, metrics };
 
 if (typeof module !== 'undefined' && require.main === module) {
@@ -120,6 +121,8 @@ const pick = a => a[Math.floor(Math.random() * a.length)];
 const shuffle = a => { a = [...a]; for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 const names = (teams, g) => g.length ? g.map(i => teams[i].name).join(' + ') : 'nobody';
 const credits = p => fmt(p * M.CREDITS_PER_SCORE_UNIT);
+// C1: a selected team pays its carbon charge and its VCG price from its round budget.
+const spend = p => fmt((M.carbonCost(S.teams2[S.me]) + p) * M.CREDITS_PER_SCORE_UNIT);
 
 // Teams are { name, d, v: reported value, tv: true value, you }. Rivals are simulated and report truthfully.
 const rival = name => { const t = pick(TIERS); return { name, d: t.d, v: t.v, tv: t.v }; };
@@ -415,7 +418,7 @@ function drawWhatIf() {
   const r = +$('#w').value, w = whatIf(r);
   $('#wOut').textContent = r;
   $('#wRes').innerHTML = `Report ${r}${r === S.tv ? ' (your true value)' : ''}: <b>${w.win ? 'selected' : 'left out'}</b>` +
-    (w.win ? ` · payment ${fmt(w.p)} (${credits(w.p)} credits)` : '') + ` · utility <b>${fmt(w.u)}</b>`;
+    (w.win ? ` · payment ${fmt(w.p)} (${credits(w.p)} credits) · spends ${spend(w.p)} of ${M.ROUND_BUDGET_CREDITS} credits` : '') + ` · utility <b>${fmt(w.u)}</b>`;
 
   const us = S.curve.map(c => c[1]);
   const lo = Math.min(0, ...us) - 0.5, hi = Math.max(0.5, ...us) + 0.5;

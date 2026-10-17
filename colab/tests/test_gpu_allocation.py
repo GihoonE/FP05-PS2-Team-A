@@ -9,6 +9,8 @@ import unittest
 from pathlib import Path
 
 from src.gpu_allocation import (
+    PRIORITY_CREDITS_PER_SCORE_UNIT,
+    ROUND_BUDGET_CREDITS,
     Team,
     default_example,
     fcfs_all_orders,
@@ -76,6 +78,21 @@ class TruthfulnessTest(unittest.TestCase):
                 value = rng.randint(1, 10)
                 teams.append(Team(f"Team {'ABCDEF'[i]}", 5 * rng.randint(1, 6), value, value))
             self.assert_truthful_is_best(teams)
+
+
+class CreditBudgetTest(unittest.TestCase):
+    def test_round_budget_never_binds(self):
+        # C3: carbon charge plus VCG price, in credits, fits the C2 budget for every lambda and report.
+        teams, _ = default_example()
+        worst = max(
+            (step / 10 * team.emissions_kg_co2e + row["payment_score_units"]) * PRIORITY_CREDITS_PER_SCORE_UNIT
+            for step in range(11)
+            for index, team in enumerate(teams)
+            for row in misreport_sweep(teams, index, REPORTS, carbon_penalty_per_kg_co2e=step / 10)
+            if row["selected"]
+        )
+        self.assertEqual(worst, 60.0)
+        self.assertLessEqual(worst, ROUND_BUDGET_CREDITS)
 
 
 class RandomOrderFcfsTest(unittest.TestCase):

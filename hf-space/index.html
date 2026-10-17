@@ -152,8 +152,9 @@
         <li><b>First come, first served:</b> the outcome depends only on the random arrival order and request sizes.
           Project value plays no role, so there is nothing to misreport.</li>
         <li><b>Scored group selection (VCG):</b> reporting your true value is a dominant strategy (DSIC). It is optimal
-          whatever the others report, when utility = true value − own carbon penalty − payment and priority credits have
-          a real future cost. The <i>What if</i> slider lets you check this in every game.</li>
+          whatever the others report, when utility = true value − own carbon penalty − payment. Priority credits carry a real
+          cost because each team holds a fixed budget of 100 credits per round, with no top-ups, and pays both its carbon
+          charge and its VCG price from it. The <i>What if</i> slider lets you check this in every game.</li>
         <li>A player who understands the rule can predict their own selection from the scores and the 100-hour limit.</li>
       </ul>
 
@@ -185,7 +186,7 @@
       <h2>Limits of classroom evidence</h2>
       <ul>
         <li>Small and self-selected: classmates at one symposium, not a random sample of GPU users.</li>
-        <li>Hypothetical stakes: priority credits here have no real future cost, which weakens the DSIC condition.</li>
+        <li>Hypothetical stakes: the 100-credit round budget is shown but not carried between games, so whether credits keep their value over many rounds is untested.</li>
         <li>Simulated, truthful rivals: real teams may misreport or coordinate.</li>
         <li>The interface itself frames choices (default report = true value, the order of explanations).</li>
         <li>So the results are exploratory. They can challenge an assumption, but they are not population-level causal evidence.</li>
@@ -193,9 +194,9 @@
 
       <h2>Code and reproducibility</h2>
       <p>All calculations run in your browser in <code>app.js</code>, a line-by-line port of
-        <a href="https://github.com/GihoonE/COMPSCI206-PS2/blob/main/colab/src/gpu_allocation.py" target="_blank" rel="noopener">colab/src/gpu_allocation.py</a>.
+        <a href="https://github.com/dku-comsci-econ206-Autumn2026/FP05-PS2-Team-A/blob/main/colab/src/gpu_allocation.py" target="_blank" rel="noopener">colab/src/gpu_allocation.py</a>.
         Running <code>node app.js</code> checks it against the repo's <code>outputs/</code> and tests truthful reporting on 200 random games.
-        Repository: <a href="https://github.com/GihoonE/COMPSCI206-PS2" target="_blank" rel="noopener">GihoonE/COMPSCI206-PS2</a>.</p>
+        Repository: <a href="https://github.com/dku-comsci-econ206-Autumn2026/FP05-PS2-Team-A" target="_blank" rel="noopener">dku-comsci-econ206-Autumn2026/FP05-PS2-Team-A</a>.</p>
 
       <div class="controls"><button class="btn" id="back">‹ Back</button></div>
     </section>
