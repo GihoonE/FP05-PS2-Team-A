@@ -1,6 +1,6 @@
 # Transparent GPU-Hour Allocation.
 [![Hugging Face Space](https://img.shields.io/badge/Hugging%20Face-Live%20Space-FFD21E?logo=huggingface&logoColor=black)](https://huggingface.co/spaces/dku-comsci-econ206-2026/PS2_Team_A)
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/14eo8a2HWUbbBtv-m-ia4xRiL4V6Iwtun)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1xYtctTPKXDszHMjdOS7IVz-OByt4edlD)
 
 **COMPSCI/ECON 206, Team A (FP5)**
 *Mustafa Ayub Khan · Temur Akhtamjonov · Gihun Lee*
@@ -25,8 +25,8 @@ We compare two rules on the same six teams:
 | Artifact | Link | What it shows |
 |---|---|---|
 | Verified release | [`final-v3` tag](https://github.com/dku-comsci-econ206-Autumn2026/FP05-PS2-Team-A/tree/final-v3) | The exact code, notebook, and outputs reported below (final project, Oct 2026) |
-| Colab notebook | [Open in Colab](https://colab.research.google.com/drive/14eo8a2HWUbbBtv-m-ia4xRiL4V6Iwtun) | Self-contained model code, proof sketch, utility plots, checks, fresh-run record |
-| Hugging Face Space | [PS2_Team_A](https://huggingface.co/spaces/dku-comsci-econ206-2026/PS2_Team_A) | Play one team: FCFS, then VCG with a prediction, allocation and payment audit, a *what-if* report slider, and reflection |
+| Colab notebook | [Open in Colab](https://colab.research.google.com/drive/1xYtctTPKXDszHMjdOS7IVz-OByt4edlD) | Self-contained model code, proof sketch, utility plots, checks, fresh-run record |
+| Hugging Face Space | [PS2_Team_A](https://huggingface.co/spaces/dku-comsci-econ206-2026/PS2_Team_A) (commit `dddebc7`) | Play one team: FCFS, then VCG with a prediction, allocation and payment audit, a *what-if* report slider, and reflection |
 
 ## Game design: a static game with incomplete information
 
@@ -199,7 +199,7 @@ The largest jobs move to the cleaner pool, and truthful reporting stays optimal.
 
 The model, script, and tests need only the Python standard library (Python 3.9 or newer).
 
-**Colab:** open the [shared notebook](https://colab.research.google.com/drive/14eo8a2HWUbbBtv-m-ia4xRiL4V6Iwtun) (a copy is in `colab/notebooks/01_gpu_hour_vcg_allocation.ipynb`), choose *Runtime → Run all*, and check that the last cell prints `PASS` for all ten checks. The notebook is self-contained: the full model code is inside it, so it needs no clone and no installs.
+**Colab:** open the [shared notebook](https://colab.research.google.com/drive/1xYtctTPKXDszHMjdOS7IVz-OByt4edlD) (a copy is in `colab/notebooks/01_gpu_hour_vcg_allocation.ipynb`), choose *Runtime → Run all*, and check that the last cell prints `PASS` for all ten checks. The notebook is self-contained: the full model code is inside it, so it needs no clone and no installs.
 
 **Local:**
 
