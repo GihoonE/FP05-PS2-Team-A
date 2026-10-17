@@ -248,7 +248,7 @@ hf-space/                          behavioral artifact (static Hugging Face Spac
 poster/final-poster.pdf, .png      final A0 poster (PDF and the preview embedded above)
 PS2-FP05-TeamA-Overleaf-Source/    paper LaTeX source (same content as the .zip)
 PS2-FP05-TeamA.pdf                 compiled final paper
-PS2-FP05-TeamA-A0-Poster.pdf/.pptx editable A0 poster and its PDF
+PS2-FP05-TeamA-A0-Poster.pptx/.pdf/.png editable A0 poster, its PDF, and a PNG preview
 ```
 
 ## Evidence boundary and limitations
