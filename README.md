@@ -3,7 +3,7 @@
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1xYtctTPKXDszHMjdOS7IVz-OByt4edlD)
 
 **COMPSCI/ECON 206, Team A (FP5)**
-*Mustafa Ayub Khan · Temur Akhtamjonov · Gihun Lee*
+*Temur Akhtamjonov · Mustafa Ayub Khan · Gihun Lee*
 
 ## Final presentation poster
 

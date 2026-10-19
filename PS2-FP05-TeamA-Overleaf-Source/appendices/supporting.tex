@@ -1,4 +1,4 @@
-\clearpage\nobalance
+\clearpage\nobalance\sloppy
 \section*{Author Notes}
 \subsection*{Acknowledgements}
 \textbf{Course instructor: Professor Luyao Zhang.} We thank Prof.~Luyao Zhang for the opportunity to carry out PS1 and PS2 and build our research skills, for the COMPSCI/ECON~206 workshops, and for her formal course feedback of October~14, 2026, which set the final revisions (Appendix~D.1). We thank Prof.~Kenneth S. (Ken) Rogerson for advice on each member's PS1, which became the foundation of our PS2 research question, and Han Zhang for a question on our research idea that made us rethink it and state our research question more concretely.
@@ -83,9 +83,11 @@ One payment score unit equals 10 non-transferable priority credits in this class
 \caption{Reduced $2\times2$ game: utilities $(u_C,u_E)$ and the selected group.}
 \label{tab:matrix}
 \footnotesize
+\setlength{\tabcolsep}{4pt}
 \begin{tabular}{lcc}
 \toprule
- & E truthful ($r_E=6$) & E underreports ($r_E=4$) \\
+ & E truthful & E underreports \\
+ & ($r_E=6$) & ($r_E=4$) \\
 \midrule
 C truthful ($r_C=3$) & $(0,\;1.2)$, ABDE & $(0.8,\;0)$, ABCDF \\
 C overreports ($r_C=4.5$) & $(-1.2,\;0)$, ABCDF & $(0.8,\;0)$, ABCDF \\
@@ -111,7 +113,7 @@ The implementation checks every possible subset of six teams.
 \item Credit-budget check (C3): over steps 6--7, record each selected team's spend $10(\lambda e_i+p_i)$ and confirm that it never exceeds the 100-credit budget.
 \end{enumerate}
 
-A fresh run of \texttt{python colab/run\_simulation.py} reproduces the saved summary, team-level, all-orders, truthfulness, and carbon-weight-sweep CSV outputs in the repository's \texttt{colab/outputs} folder. The same calculation is available in our self-contained Colab notebook (\NotebookLink).
+A fresh run of \texttt{python colab/run\_simulation.py} reproduces the saved summary, team-level, all-orders, truthfulness, and carbon-weight-sweep CSV outputs in the repository's \path{colab/outputs} folder. The same calculation is available in our self-contained Colab notebook (\NotebookLink).
 
 The saved fresh-run comparison is:
 
@@ -130,7 +132,7 @@ VCG (A,B,D,E) & 90 & 30 & 21.6 & 19.2 \\
 
 In the illustrative order, FCFS serves A, B, E, C, and F and leaves 5 GPU-hours unused. Across all 720 orders, the FCFS carbon-adjusted score ranges from 15.6 to 19.2, and no order exceeds VCG. VCG leaves 10 GPU-hours unused and collects 9.6 payment score units, equal to 96 priority credits (2.4 per winner). Utilities are 3.6 for A and D, 1.2 for B and E, and 0 for C and F. For every team, no tested report on the grid $\{0,0.5,\dots,10\}$ yields higher utility than $r_i=v_i$. The notebook's final cell prints PASS for ten checks: allocation, capacity, value and score, payments, utilities, truthful optimality, the 720-order comparison, truthful optimality at every carbon weight, the two-GPU-pool extension, and the credit budget (C3). A repository test confirms that the notebook's model code is identical to \texttt{colab/src/gpu\_allocation.py}.
 
-\textbf{Carbon-weight sweep} (\texttt{colab/outputs/lambda\_sweep.csv}; demands, values, capacity, and algorithm fixed).
+\textbf{Carbon-weight sweep} (\path{colab/outputs/lambda_sweep.csv}; demands, values, capacity, and algorithm fixed).
 
 \begin{center}
 \footnotesize\setlength{\tabcolsep}{3pt}
