@@ -75,13 +75,13 @@ Truthful reporting is optimal whatever the others report (DSIC), so teams need n
 - **Why the carbon term matters.** If utility were $`v_i - p_i`$, the best report would be $`r_i = v_i + \lambda e_i`$, and DSIC would fail.
 - **Special case.** With one item and $`\lambda = 0`$, the rule is the Vickrey second-price auction.
 
-DSIC holds under three credit conditions (final design, after the October 12–14 duet and roundtable with FP8):
+DSIC rests on two conditions, with a third as a feasibility check (final design, after the October 12–14 duet and roundtable with FP8):
 
-- **C1, own carbon charge.** A selected team pays its carbon charge $`\lambda e_i`$ in credits.
-- **C2, fixed credit budget.** Each team holds 100 credits per allocation round; no top-ups; spent credits are retired.
-- **C3, budget never binds.** Over every $`\lambda \in \lbrace 0, 0.1, \dots, 1 \rbrace`$ and every report, the largest spend (carbon charge + VCG price) is 60 credits, below the 100-credit budget. At $`\lambda = 0.5`$ winners spend 48–54 credits.
+- **C1, own carbon charge.** A selected team pays its carbon charge $`\lambda e_i`$ in credits; otherwise the best report is $`v_i + \lambda e_i`$.
+- **C2, linear credit cost (assumption).** A credit charged to a team has a linear opportunity cost, as in $`u_i = v_i - \lambda e_i - p_i`$. The code cannot test this.
+- **C3, budget feasibility (check).** Each team has a fixed budget of 100 credits per round, with no top-ups, and spent credits are retired. Over every tested $`\lambda \in \lbrace 0, 0.1, \dots, 1 \rbrace`$ and report, the largest spend (carbon charge + VCG price) is 60 credits, so the budget never binds. At $`\lambda = 0.5`$ winners spend 48–54 credits. C3 shows payments are feasible; it does not prove that credits have real value.
 
-The code checks C3 on this instance. Whether credits keep their value over many rounds is untested (see the roadmap in the paper).
+Whether credits keep their opportunity cost over many rounds is untested (see the roadmap in the paper).
 
 ## Parameters
 
@@ -179,7 +179,7 @@ Truth is weakly dominant for both teams, so (truthful, truthful) is the equilibr
 - **What $`\lambda`$ changes.** It moves each team's selection boundary, the price, and the size of the payoff. At low $`\lambda`$ the low-value teams C and F still compete for a seat, so winners pay more; as $`\lambda`$ rises, competition fades and payments fall to zero, while each winner's own carbon charge grows.
 - **What it does not change.** Truthful reporting is optimal for every team at every $`\lambda`$ in the sweep. $`\lambda`$ is a policy weight on carbon, not an incentive parameter, and it cannot be chosen by maximizing project value (on value alone, $`\lambda = 0`$ always wins).
 - **Why the group changes at $`\lambda = 0`$.** Groups {A, B, C, D, F} and {A, B, D, E} tie on value (30). The public tie-break picks more teams; any $`\lambda > 0`$ breaks the tie toward the group that uses fewer GPU-hours.
-- **Beyond the sweep.** Above $`\lambda = 1.25`$ only A and D remain, and above $`\lambda = 1.5`$ no team is served: a carbon weight that is too heavy stops research.
+- **Beyond the sweep.** In this synthetic instance, above $`\lambda = 1.25`$ only A and D remain, and above $`\lambda = 1.5`$ no team is served. These thresholds are not a general cap; a real $`\lambda`$ needs local carbon-price data.
 
 **Extension: two GPU types** (notebook only). Reviewer question: real clusters have more than one GPU type. The same 100 GPU-hours are split into an H100 pool (50 h, 0.24 kg CO₂e per GPU-hour) and an A100 pool (50 h, 0.14 kg), and the mechanism also chooses each team's pool.
 
@@ -256,7 +256,7 @@ PS2-FP05-TeamA-A0-Poster.pptx/.pdf/.png editable A0 poster, its PDF, and a PNG p
 - **Computed, not observed.** Every number here comes from the formal model. The code checks the announced allocation and payment rule, but it cannot verify a team's true private value.
 - **Behavioral evidence lives in the Hugging Face Space and is exploratory.** Five completed self-plays by the three authors (October 3, 2026) are exported in `hf-space/plays.csv`: no misreport raised the player's utility, but three of five players overreported, and the written reflections are blank. The Space's rival teams are simulated and truthful. Classroom play is a small, self-selected sample with hypothetical stakes, so it is not population-level causal evidence.
 - **Assumptions.** The 0.24 kg CO₂e per GPU-hour rate and $`\lambda = 0.5`$ are announced classroom-model assumptions, not measured emissions for real workloads. Location- and time-specific emissions are out of scope; heterogeneous hardware appears only in the two-GPU-pool extension, which ignores speed differences.
-- **DSIC condition.** Truthful reporting is dominant only under C1–C3: each team pays its own carbon charge, credits come from a fixed 100-credit budget with no top-ups, and the budget never binds. Value over repeated rounds is untested.
+- **DSIC condition.** Truthful reporting is dominant only under C1 (own carbon charge) and the C2 linear credit-cost assumption; C3 checks only that the 100-credit budget is enough in the tested cases. Value over repeated rounds is untested.
 - **Scale.** Exhaustive search (2ⁿ groups) is exact for six teams. Larger n would need an integer-programming solver.
 
 ## Final project additions (v3, October 2026)

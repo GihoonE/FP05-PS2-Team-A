@@ -74,11 +74,11 @@
 <text x="20" y="536" font-size="14" fill="#C2410C" text-anchor="start" font-weight="bold" xml:space="preserve">Risk</text>
 <text x="770" y="536" font-size="14" fill="#15803D" text-anchor="start" font-weight="bold" xml:space="preserve">Safeguard</text>
 <rect x="20" y="550" width="700" height="46" rx="6" fill="#FBE9DF" stroke="none" stroke-width="1"/>
-<text x="34" y="569.0" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">A heavy λ penalizes compute-heavy research (9.4 works against 9.5): above λ = 1.25 only two teams are</text>
-<text x="34" y="585.104" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">served.</text>
+<text x="34" y="569.0" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">A heavy λ penalizes compute-heavy research (9.4 works against 9.5): in this instance, above λ = 1.25 only</text>
+<text x="34" y="585.104" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">two teams are served.</text>
 <line x1="724" y1="573" x2="762" y2="573" stroke="#6B7280" stroke-width="1.6" marker-end="url(#ah)"/>
 <rect x="770" y="550" width="710" height="46" rx="6" fill="#E3F2E7" stroke="none" stroke-width="1"/>
-<text x="784" y="569.0" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">Publish λ before each round and cap it below 1.25, the bound found by the sweep.</text>
+<text x="784" y="569.0" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">Calibrate λ from local carbon-price data and publish it in advance; 1.25 is only this instance’s threshold.</text>
 <rect x="20" y="604" width="700" height="46" rx="6" fill="#FBE9DF" stroke="none" stroke-width="1"/>
 <text x="34" y="623.0" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">The same low-value teams are excluded every round (VCG serves 4 teams; FCFS 4.93 on average).</text>
 <line x1="724" y1="627" x2="762" y2="627" stroke="#6B7280" stroke-width="1.6" marker-end="url(#ah)"/>
@@ -88,7 +88,7 @@
 <text x="34" y="677.0" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">Adding credits mid-term removes their cost, and with it the reason to report truthfully.</text>
 <line x1="724" y1="681" x2="762" y2="681" stroke="#6B7280" stroke-width="1.6" marker-end="url(#ah)"/>
 <rect x="770" y="658" width="710" height="46" rx="6" fill="#E3F2E7" stroke="none" stroke-width="1"/>
-<text x="784" y="677.0" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">Fixed credit supply per round (C2); no top-ups; spent credits are retired.</text>
+<text x="784" y="677.0" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">Fixed 100-credit budget per round, no top-ups, retired payments (C3); C2 stays a stated assumption.</text>
 <rect x="20" y="712" width="700" height="46" rx="6" fill="#FBE9DF" stroke="none" stroke-width="1"/>
 <text x="34" y="731.0" font-size="12.2" fill="#1F2937" text-anchor="start" xml:space="preserve">True values cannot be verified, and a misreport that wins a seat can displace an honest team.</text>
 <line x1="724" y1="735" x2="762" y2="735" stroke="#6B7280" stroke-width="1.6" marker-end="url(#ah)"/>

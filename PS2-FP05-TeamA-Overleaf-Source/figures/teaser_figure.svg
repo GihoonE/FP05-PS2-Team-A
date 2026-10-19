@@ -214,7 +214,7 @@
 <rect x="1036.0" y="594.0" width="130.0" height="4.0" rx="0" fill="#C2410C" stroke="none" stroke-width="1"/>
 <text x="1101.0" y="638.3" font-size="13" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan >Truthful reporting</tspan></text>
 <text x="1101.0" y="654.5" font-size="13" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan >is dominant (DSIC)</tspan></text>
-<text x="1101.0" y="672.8" font-size="12" fill="#C2410C" text-anchor="middle" xml:space="preserve"><tspan font-weight="bold">only under C1–C3 ↓</tspan></text>
+<text x="1101.0" y="672.8" font-size="12" fill="#C2410C" text-anchor="middle" xml:space="preserve"><tspan font-weight="bold">under C1 + C2 ↓</tspan></text>
 <rect x="1180.0" y="594.0" width="130.0" height="108.0" rx="4" fill="#FFFFFF" stroke="#CBD0D8" stroke-width="1"/>
 <rect x="1180.0" y="594.0" width="130.0" height="4.0" rx="0" fill="#2F4B7C" stroke="none" stroke-width="1"/>
 <text x="1245.0" y="646.4" font-size="13" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan >Social welfare</tspan></text>
@@ -224,17 +224,17 @@
 <text x="1389.0" y="646.4" font-size="13" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan >Carbon-aware</tspan></text>
 <text x="1389.0" y="662.7" font-size="13" fill="#1F2937" text-anchor="middle" xml:space="preserve"><tspan >and transparent</tspan></text>
 <rect x="20.0" y="732.0" width="1460.0" height="72.0" rx="8" fill="#FFFFFF" stroke="#C2410C" stroke-width="1.2"/>
-<text x="36" y="762" font-size="14" fill="#C2410C" text-anchor="start" xml:space="preserve"><tspan font-weight="bold">Truthfulness holds only if</tspan></text>
-<text x="36" y="781" font-size="12" fill="#6B7280" text-anchor="start" xml:space="preserve"><tspan>final credit design (Section 5)</tspan></text>
+<text x="36" y="762" font-size="14" fill="#C2410C" text-anchor="start" xml:space="preserve"><tspan font-weight="bold">Truthfulness rests on C1 + C2</tspan></text>
+<text x="36" y="781" font-size="12" fill="#6B7280" text-anchor="start" xml:space="preserve"><tspan>C3 checks feasibility (Section 5)</tspan></text>
 <line x1="288" y1="746" x2="288" y2="790" stroke="#CBD0D8" stroke-width="1"/>
 <text x="300" y="762" font-size="13" fill="#C2410C" text-anchor="start" xml:space="preserve"><tspan font-weight="bold">C1  Own carbon charge</tspan></text>
 <text x="300" y="781" font-size="11.5" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan>A winner pays λe in credits; otherwise the best report is v + λe</tspan></text>
 <line x1="681" y1="746" x2="681" y2="790" stroke="#CBD0D8" stroke-width="1"/>
-<text x="693" y="762" font-size="13" fill="#C2410C" text-anchor="start" xml:space="preserve"><tspan font-weight="bold">C2  Fixed credit budget</tspan></text>
-<text x="693" y="781" font-size="11.5" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan>100 credits per team per round; no top-ups; spent credits retired</tspan></text>
+<text x="693" y="762" font-size="13" fill="#C2410C" text-anchor="start" xml:space="preserve"><tspan font-weight="bold">C2  Linear credit cost (assumption)</tspan></text>
+<text x="693" y="781" font-size="11.5" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan>A charged credit has the same opportunity cost: u = v − λe − p</tspan></text>
 <line x1="1074" y1="746" x2="1074" y2="790" stroke="#CBD0D8" stroke-width="1"/>
-<text x="1086" y="762" font-size="13" fill="#C2410C" text-anchor="start" xml:space="preserve"><tspan font-weight="bold">C3  Budget never binds</tspan></text>
-<text x="1086" y="781" font-size="11.5" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan>Largest spend 60 ≤ 100 credits over every λ and report (checked)</tspan></text>
+<text x="1086" y="762" font-size="13" fill="#15803D" text-anchor="start" xml:space="preserve"><tspan font-weight="bold">C3  Budget feasibility (check)</tspan></text>
+<text x="1086" y="781" font-size="11.5" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan>100 credits/round, no top-ups; spend ≤ 60 of 100 in tested cases</tspan></text>
 <rect x="20.0" y="816.0" width="1460.0" height="100.0" rx="8" fill="#FFFFFF" stroke="#CBD0D8" stroke-width="1"/>
 <text x="36" y="846" font-size="14" fill="#2F4B7C" text-anchor="start" xml:space="preserve"><tspan font-weight="bold">Intellectual merits</tspan></text>
 <text x="36" y="865" font-size="12" fill="#6B7280" text-anchor="start" xml:space="preserve"><tspan>what we inherit, what is new,</tspan></text>
@@ -250,7 +250,7 @@
 <rect x="693" y="826" width="135.2" height="18" rx="9" fill="#FBE9DF" stroke="#C2410C" stroke-width="1"/>
 <text x="760.6" y="838.8" font-size="10" fill="#C2410C" text-anchor="middle" xml:space="preserve"><tspan font-weight="bold">NEW IN THIS WORK</tspan></text>
 <text x="693" y="859" font-size="11.5" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan>Carbon priced into each team's score: s = r − λe</tspan></text>
-<text x="693" y="874" font-size="11.5" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan>Credit design C1–C3 that makes the price costly</tspan></text>
+<text x="693" y="874" font-size="11.5" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan>Own carbon charge (C1); stated credit-cost assumption (C2)</tspan></text>
 <text x="693" y="889" font-size="11.5" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan>Exact comparison with all 720 FCFS arrival orders</tspan></text>
 <text x="693" y="904" font-size="11.5" fill="#1F2937" text-anchor="start" xml:space="preserve"><tspan>Two GPU pools: same winners, 21.6 → 16.6 kg CO₂e</tspan></text>
 <line x1="1074" y1="830" x2="1074" y2="902" stroke="#CBD0D8" stroke-width="1"/>
